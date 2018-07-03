@@ -1,0 +1,7 @@
+use_frameworks!
+target 'ObiMoyaExtension_Tests' do
+  pod 'ObiMoyaExtension', :path => '../'
+  
+  pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.2'
+end
