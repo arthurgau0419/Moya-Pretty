@@ -1,13 +1,13 @@
 //
 //  Demo.swift
-//  ObiMoyaExtension_Tests
+//  Moya-Pretty_Tests
 //
 //  Created by Kao Ming-Hsiu on 2018/7/4.
 //  Copyright © 2018年 CocoaPods. All rights reserved.
 //
 
 import Foundation
-import ObiMoyaExtension
+import Moya_Pretty
 import Moya
 
 struct Pet: Decodable, Encodable {

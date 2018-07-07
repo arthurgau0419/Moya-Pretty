@@ -1,11 +1,11 @@
 use_frameworks!
-target 'ObiMoyaExtension_Tests' do
-  pod 'ObiMoyaExtension', :path => '../'
-  pod 'ObiMoyaExtension/ObjectMapper', :path => '../'
-  pod 'ObiMoyaExtension/RESTful', :path => '../'
-  pod 'ObiMoyaExtension/Plugins', :path => '../'
-  pod 'ObiMoyaExtension/RxSwift', :path => '../'
-  pod 'ObiMoyaExtension/Promise', :path => '../'
+target 'Moya-Pretty_Tests' do
+  pod 'Moya-Pretty', :path => '../'
+  pod 'Moya-Pretty/ObjectMapper', :path => '../'
+  pod 'Moya-Pretty/RESTful', :path => '../'
+  pod 'Moya-Pretty/Plugins', :path => '../'
+  pod 'Moya-Pretty/RxSwift', :path => '../'
+  pod 'Moya-Pretty/Promise', :path => '../'
   
   pod 'RxTest', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'

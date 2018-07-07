@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EECF71520EC702E000FDAB3 /* Demo.swift */; };
-		DC516ADFEDA5A798D23618FA /* Pods_ObiMoyaExtension_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1C6FF0ADC81105CE2E4A9E /* Pods_ObiMoyaExtension_Tests.framework */; };
+		C97CC4A9A47302DAF65126E4 /* Pods_Moya_Pretty_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,12 +17,15 @@
 		36C75626E3D45611AF185723 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3ABC00311191EE71922947B5 /* ObiMoyaExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ObiMoyaExtension.podspec; path = ../ObiMoyaExtension.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4E1C6FF0ADC81105CE2E4A9E /* Pods_ObiMoyaExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObiMoyaExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACE51AFB9204008FA782 /* ObiMoyaExtension_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObiMoyaExtension_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* Moya-Pretty_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Pretty_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EECF71520EC702E000FDAB3 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Pretty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC516ADFEDA5A798D23618FA /* Pods_ObiMoyaExtension_Tests.framework in Frameworks */,
+				C97CC4A9A47302DAF65126E4 /* Pods_Moya_Pretty_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +54,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACE51AFB9204008FA782 /* ObiMoyaExtension_Tests.xctest */,
+				607FACE51AFB9204008FA782 /* Moya-Pretty_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +92,8 @@
 			children = (
 				9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */,
 				95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */,
+				65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */,
+				5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4E1C6FF0ADC81105CE2E4A9E /* Pods_ObiMoyaExtension_Tests.framework */,
+				9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACE41AFB9204008FA782 /* ObiMoyaExtension_Tests */ = {
+		607FACE41AFB9204008FA782 /* Moya-Pretty_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ObiMoyaExtension_Tests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Moya-Pretty_Tests" */;
 			buildPhases = (
 				25D6B1CFCB765B813C9EAF15 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
@@ -118,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = ObiMoyaExtension_Tests;
+			name = "Moya-Pretty_Tests";
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* ObiMoyaExtension_Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* Moya-Pretty_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -139,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "ObiMoyaExtension" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Moya-Pretty" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -152,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACE41AFB9204008FA782 /* ObiMoyaExtension_Tests */,
+				607FACE41AFB9204008FA782 /* Moya-Pretty_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -179,7 +185,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ObiMoyaExtension_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Moya-Pretty_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -192,11 +198,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-Pretty/Moya_Pretty.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/ObiMoyaExtension/ObiMoyaExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -211,8 +217,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Pretty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObiMoyaExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -225,7 +231,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -344,7 +350,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */;
+			baseConfigurationReference = 65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -365,7 +371,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */;
+			baseConfigurationReference = 5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -383,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "ObiMoyaExtension" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Moya-Pretty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -392,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "ObiMoyaExtension_Tests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Moya-Pretty_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,

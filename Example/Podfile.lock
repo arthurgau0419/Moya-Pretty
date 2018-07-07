@@ -2,6 +2,21 @@ PODS:
   - Alamofire (4.7.2)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
+  - Moya-Pretty (0.1.0):
+    - Moya-Pretty/Core (= 0.1.0)
+  - Moya-Pretty/Core (0.1.0):
+    - Moya (~> 11.0)
+  - Moya-Pretty/ObjectMapper (0.1.0):
+    - Moya-Pretty/Core
+    - ObjectMapper
+  - Moya-Pretty/Plugins (0.1.0)
+  - Moya-Pretty/Promise (0.1.0):
+    - Moya-Pretty/Core
+    - PromiseKit
+  - Moya-Pretty/RESTful (0.1.0)
+  - Moya-Pretty/RxSwift (0.1.0):
+    - Moya-Pretty/Core
+    - Moya/RxSwift
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -9,21 +24,6 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Nimble (7.0.3)
-  - ObiMoyaExtension (0.1.0):
-    - ObiMoyaExtension/Core (= 0.1.0)
-  - ObiMoyaExtension/Core (0.1.0):
-    - Moya (~> 11.0)
-  - ObiMoyaExtension/ObjectMapper (0.1.0):
-    - ObiMoyaExtension/Core
-    - ObjectMapper
-  - ObiMoyaExtension/Plugins (0.1.0)
-  - ObiMoyaExtension/Promise (0.1.0):
-    - ObiMoyaExtension/Core
-    - PromiseKit
-  - ObiMoyaExtension/RESTful (0.1.0)
-  - ObiMoyaExtension/RxSwift (0.1.0):
-    - Moya/RxSwift
-    - ObiMoyaExtension/Core
   - ObjectMapper (3.3.0)
   - PromiseKit (6.3.4):
     - PromiseKit/CorePromise (= 6.3.4)
@@ -49,13 +49,13 @@ PODS:
     - RxSwift (~> 4.0)
 
 DEPENDENCIES:
+  - Moya-Pretty (from `../`)
+  - Moya-Pretty/ObjectMapper (from `../`)
+  - Moya-Pretty/Plugins (from `../`)
+  - Moya-Pretty/Promise (from `../`)
+  - Moya-Pretty/RESTful (from `../`)
+  - Moya-Pretty/RxSwift (from `../`)
   - Nimble (~> 7.0.2)
-  - ObiMoyaExtension (from `../`)
-  - ObiMoyaExtension/ObjectMapper (from `../`)
-  - ObiMoyaExtension/Plugins (from `../`)
-  - ObiMoyaExtension/Promise (from `../`)
-  - ObiMoyaExtension/RESTful (from `../`)
-  - ObiMoyaExtension/RxSwift (from `../`)
   - Quick (~> 1.2.0)
   - RxBlocking
   - RxCocoa (~> 4.0)
@@ -78,14 +78,14 @@ SPEC REPOS:
     - RxTest
 
 EXTERNAL SOURCES:
-  ObiMoyaExtension:
+  Moya-Pretty:
     :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-Pretty: 478c7d26286c40844de295dc2724873b5c823d02
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  ObiMoyaExtension: 84bea8ab4d05886696f7d69b5778379961daffa5
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
@@ -96,6 +96,6 @@ SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
 
-PODFILE CHECKSUM: d469397a7528617853417ccd907ba08600a459c1
+PODFILE CHECKSUM: 8dcba7071ad14257273a6ad63238fbc2d321582e
 
 COCOAPODS: 1.5.3

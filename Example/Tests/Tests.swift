@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import ObiMoyaExtension
+import Moya_Pretty
 import Moya
 import Result
 import RxSwift

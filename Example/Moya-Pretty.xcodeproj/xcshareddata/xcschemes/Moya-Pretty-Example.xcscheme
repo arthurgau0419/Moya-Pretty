@@ -17,7 +17,7 @@
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
                BuildableName = "ObiMoyaExtension_Example.app"
                BlueprintName = "ObiMoyaExtension_Example"
-               ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+               ReferencedContainer = "container:Moya-Pretty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "ObiMoyaExtension_Tests.xctest"
-               BlueprintName = "ObiMoyaExtension_Tests"
-               ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+               BuildableName = "Moya-Pretty_Tests.xctest"
+               BlueprintName = "Moya-Pretty_Tests"
+               ReferencedContainer = "container:Moya-Pretty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,7 +40,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -48,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "ObiMoyaExtension_Tests.xctest"
-               BlueprintName = "ObiMoyaExtension_Tests"
-               ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+               BuildableName = "Moya-Pretty_Tests.xctest"
+               BlueprintName = "Moya-Pretty_Tests"
+               ReferencedContainer = "container:Moya-Pretty.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,7 +59,7 @@
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "ObiMoyaExtension_Example.app"
             BlueprintName = "ObiMoyaExtension_Example"
-            ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+            ReferencedContainer = "container:Moya-Pretty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -70,7 +69,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -84,7 +82,7 @@
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "ObiMoyaExtension_Example.app"
             BlueprintName = "ObiMoyaExtension_Example"
-            ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+            ReferencedContainer = "container:Moya-Pretty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -103,7 +101,7 @@
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "ObiMoyaExtension_Example.app"
             BlueprintName = "ObiMoyaExtension_Example"
-            ReferencedContainer = "container:ObiMoyaExtension.xcodeproj">
+            ReferencedContainer = "container:Moya-Pretty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
