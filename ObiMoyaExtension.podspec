@@ -30,8 +30,6 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ObiMoyaExtension/Classes/**/*'
-  
   # s.resource_bundles = {
   #   'ObiMoyaExtension' => ['ObiMoyaExtension/Assets/*.png']
   # }
@@ -39,4 +37,40 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  # s.dependency 'Moya', '~> 11.0'
+  # s.dependency 'Moya/RxSwift'
+
+  s.subspec 'Core' do |ss|
+    ss.dependency 'Moya', '~> 11.0'
+    ss.source_files = 'ObiMoyaExtension/Classes/**/*'
+  end
+  
+  s.subspec 'ObjectMapper' do |ss|
+    ss.source_files = 'ObiMoyaExtension/SubSpec/ObjectMapper/Sources/*'
+    ss.dependency 'ObiMoyaExtension/Core'
+    ss.dependency 'ObjectMapper'
+  end
+
+  s.subspec 'Promise' do |ss|
+    ss.source_files = 'ObiMoyaExtension/SubSpec/Promise/Sources/*'
+    ss.dependency 'ObiMoyaExtension/Core'
+    ss.dependency 'PromiseKit'
+  end
+
+  s.subspec 'RxSwift' do |ss|
+    ss.source_files = 'ObiMoyaExtension/SubSpec/RxSwift/Sources/*'
+    ss.dependency 'ObiMoyaExtension/Core'
+    ss.dependency 'Moya/RxSwift'
+  end
+
+  s.subspec 'RESTful' do |ss|
+    ss.source_files = 'ObiMoyaExtension/SubSpec/RESTful/Sources/*'    
+  end
+  
+  s.subspec 'Plugins' do |ss|
+    ss.source_files = 'ObiMoyaExtension/SubSpec/Plugins/Sources/*'
+  end
+  
+  s.default_subspecs = ['Core']
+  s.swift_version = '4.1'
 end
