@@ -9,10 +9,32 @@
 import Foundation
 import Moya_Pretty
 import Moya
+import ObjectMapper
 
 struct Pet: Decodable, Encodable {
   let id: Int
   let name: String
+}
+
+class MappablePet: Mappable {
+  var id: Int?
+  var name: String?
+  
+  required init?(map: Map) {}
+  
+  // Mappable
+  func mapping(map: Map) {
+    id <- map["id"]
+    name <- map["name"]
+  }
+}
+
+extension PetService {
+  // POST api/pet
+  class AddPetMappable: ObjectMappableTarget<MappablePet, MappablePet>, TargetType, Service {
+    var method = Moya.Method.post
+    var path = "pet/"
+  }
 }
 
 protocol Service {
@@ -44,7 +66,7 @@ struct PetService {
     var method = Moya.Method.post
     var path = "pet/"
   }
-      
+  
   // GET api/pet/{id}
   class GetPet: JSONDecodableTarget<Pet>, TargetType, Service {
     var method = Moya.Method.get
@@ -82,7 +104,10 @@ struct PetService {
 
 extension MoyaProvider {
   class var `default`: MoyaProvider<Target> {
-    return MoyaProvider<Target>.init(plugins: [NetworkLoggerPlugin()])
+    return MoyaProvider<Target>.init(plugins: [
+      NetworkLoggerPlugin(),
+      InternationalizationPlugin(languageCode: "zh-tw")
+      ])
   }
   convenience init(log: Bool) {
     var plugins: [PluginType] = []

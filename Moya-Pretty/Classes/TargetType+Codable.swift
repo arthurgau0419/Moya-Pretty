@@ -59,7 +59,12 @@ extension TargetType {
   
   var headers: [String : String]? {
     return nil
-  }
+  }    
+}
+
+extension Cancellable {
+  /// Finish the function chain and avoid warnings.
+  public func cauterize() -> Void {}
 }
 
 

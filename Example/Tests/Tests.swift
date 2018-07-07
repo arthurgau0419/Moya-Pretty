@@ -4,25 +4,67 @@ import Quick
 import Nimble
 import Moya_Pretty
 import Moya
-import Result
 import RxSwift
 import RxNimble
+import PromiseKit
 
 class TableOfContentsSpec: QuickSpec {
-  let disposeBag = DisposeBag()
+  
+  let newPet = Pet(id: 1, name: "Obi")
+  let newMappablePet = MappablePet(JSON: ["id": 1, "name":"Obi"])!
+  
   override func spec() {
     
-    describe("API Test") {
+    describe("ObjectMapper") {
       
-      it ("rx can get pet") {
+      it ("Can add pet") {
+        waitUntil(timeout: 10, action: { (done) in
+          MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet), completion: { (result) in
+            switch result {
+            case .success(let pet):
+              expect(pet.id).to(equal(self.newMappablePet.id))
+              expect(pet.name).to(equal(self.newMappablePet.name))
+            case .failure(let error):
+              fail(error.localizedDescription)
+            }
+            done()
+          }).cauterize()
+        })
+      }
+      
+      it ("Can add pet using RxSwift") {
+        let addPet = MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
+        expect(addPet).notTo(beNil())
+      }
+      
+      it ("Can add pet using PromiseKit") {
+        waitUntil(timeout: 10, action: { (done) in
+          firstly {
+            MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
+            }.done({ (pet) in
+              expect(pet.id).to(equal(self.newMappablePet.id))
+              expect(pet.name).to(equal(self.newMappablePet.name))
+            }).catch({ (error) in
+              fail(error.localizedDescription)
+            }).finally {
+              done()
+          }
+        })
+      }
+      
+    }
+    
+    describe("Codable") {
+      
+      it ("Can add pet using RxSwift") {
         let addPet = MoyaProvider<PetService.AddPet>.default.rx
           .requestModel(PetService.AddPet(body: Pet(id: 123, name: "123")))
         expect(addPet).to(beNil())
       }
       
-      it ("can get pet") {
+      it ("Can add pet") {
         waitUntil(timeout: 10, action: { (done) in
-          let cancelable = MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
+          MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
             switch result {
             case .success(let pet):
               print(pet)
@@ -31,7 +73,23 @@ class TableOfContentsSpec: QuickSpec {
               fail(error.localizedDescription)
             }
             done()
-          })
+          }).cauterize()
+          
+        })
+      }
+      
+      it ("Can add pet using PromiseKit") {
+        waitUntil(timeout: 10, action: { (done) in
+          firstly {
+            MoyaProvider.default.requestModel(PetService.AddPet(body: self.newPet))
+            }.done({ (pet) in
+              expect(pet.id).to(equal(self.newPet.id))
+              expect(pet.name).to(equal(self.newPet.name))
+            }).catch({ (error) in
+              fail(error.localizedDescription)
+            }).finally {
+              done()
+          }
         })
       }
       
@@ -49,52 +107,10 @@ class TableOfContentsSpec: QuickSpec {
               break
             }
             done()
-          })
+          }).cauterize()
           
           
         })
-      }
-    }
-    
-    
-    describe("these will fail") {
-      
-      it("can do maths") {
-        expect(1) == 2
-      }
-      
-      it("can read") {
-        expect("number") == "string"
-      }
-      
-      it("will eventually fail") {
-        expect("time").toEventually( equal("done") )
-      }
-      
-      context("these will pass") {
-        
-        it("can do maths") {
-          expect(23) == 23
-        }
-        
-        it("can read") {
-          expect("🐮") == "🐮"
-        }
-        
-        it("will eventually pass") {
-          var time = "passing"
-          
-          DispatchQueue.main.async {
-            time = "done"
-          }
-          
-          waitUntil { done in
-            Thread.sleep(forTimeInterval: 0.5)
-            expect(time) == "done"
-            
-            done()
-          }
-        }
       }
     }
   }
