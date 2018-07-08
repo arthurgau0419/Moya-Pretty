@@ -10,12 +10,12 @@ import Moya
 import ObjectMapper
 
 public protocol MappableBodyType {
-  associatedtype MappableBodyModel: Mappable
+  associatedtype MappableBodyModel: BaseMappable
   var body: MappableBodyModel {get}
 }
 
 public protocol MappableResponseType {
-  associatedtype MappableResponseModel: Mappable
+  associatedtype MappableResponseModel: BaseMappable
 }
 
 open class ObjectMappableBodyTarget<InputModel: Mappable>: MappableBodyType {
@@ -26,12 +26,12 @@ open class ObjectMappableBodyTarget<InputModel: Mappable>: MappableBodyType {
   }
 }
 
-open class ObjectMappableResponseTarget<OutputModel: Mappable>: MappableResponseType {
+open class ObjectMappableResponseTarget<OutputModel: BaseMappable>: MappableResponseType {
   public typealias MappableResponseModel = OutputModel
   public init() {}
 }
 
-open class ObjectMappableTarget<InputModel: Mappable, OutputModel: Mappable>: MappableBodyType, MappableResponseType {
+open class ObjectMappableTarget<InputModel: BaseMappable, OutputModel: BaseMappable>: MappableBodyType, MappableResponseType {
   public var body: InputModel
   public typealias MappableBodyModel = InputModel
   public typealias MappableResponseModel = OutputModel

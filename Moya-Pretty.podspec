@@ -50,6 +50,13 @@ TODO: Add long description of the pod here.
     ss.dependency 'Moya-Pretty/Core'
     ss.dependency 'ObjectMapper'
   end
+  
+  s.subspec 'XMLDictionary' do |ss|
+    ss.source_files = 'Moya-Pretty/SubSpec/XMLDictionary/Sources/*'
+    ss.dependency 'Moya-Pretty/Core'
+    ss.dependency 'ObjectMapper'
+    ss.dependency 'XMLDictionary'
+  end
 
   s.subspec 'Promise' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/Promise/Sources/*'

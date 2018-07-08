@@ -8,63 +8,16 @@ import RxSwift
 import RxNimble
 import PromiseKit
 
-class TableOfContentsSpec: QuickSpec {
-  
+class CodableSpec: QuickSpec {
   let newPet = Pet(id: 1, name: "Obi")
-  let newMappablePet = MappablePet(JSON: ["id": 1, "name":"Obi"])!
   
   override func spec() {
-    
-    describe("ObjectMapper") {
-      
-      it ("Can add pet") {
-        waitUntil(timeout: 10, action: { (done) in
-          MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet), completion: { (result) in
-            switch result {
-            case .success(let pet):
-              expect(pet.id).to(equal(self.newMappablePet.id))
-              expect(pet.name).to(equal(self.newMappablePet.name))
-            case .failure(let error):
-              fail(error.localizedDescription)
-            }
-            done()
-          }).cauterize()
-        })
-      }
-      
-      it ("Can add pet using RxSwift") {
-        let addPet = MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
-        expect(addPet).notTo(beNil())
-      }
-      
-      it ("Can add pet using PromiseKit") {
-        waitUntil(timeout: 10, action: { (done) in
-          firstly {
-            MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
-            }.done({ (pet) in
-              expect(pet.id).to(equal(self.newMappablePet.id))
-              expect(pet.name).to(equal(self.newMappablePet.name))
-            }).catch({ (error) in
-              fail(error.localizedDescription)
-            }).finally {
-              done()
-          }
-        })
-      }
-      
-    }
-    
+        
     describe("Codable") {
       
-      it ("Can add pet using RxSwift") {
-        let addPet = MoyaProvider<PetService.AddPet>.default.rx
-          .requestModel(PetService.AddPet(body: Pet(id: 123, name: "123")))
-        expect(addPet).to(beNil())
-      }
-      
       it ("Can add pet") {
         waitUntil(timeout: 10, action: { (done) in
-          MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
+          MoyaProvider.default.requestModel(PetService.AddPet(body: self.newPet), completion: { (result) in
             switch result {
             case .success(let pet):
               print(pet)
@@ -76,6 +29,29 @@ class TableOfContentsSpec: QuickSpec {
           }).cauterize()
           
         })
+      }
+      
+      it ("Can get pet") {
+        waitUntil(timeout: 10, action: { (done) in
+          MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
+            switch result {
+            case .success(let pet):
+              expect(pet).notTo(beNil())
+            case .failure(let error):
+              fail(error.localizedDescription)
+            }
+            done()
+          }).cauterize()
+          
+        })
+      }
+      
+      it ("Can add pet using RxSwift") {
+        let provider = MoyaProvider<PetService.AddPet>.default
+        let addPet = provider.rx
+          .requestModel(PetService.AddPet(body: self.newPet)).timeout(RxTimeInterval(10), scheduler: MainScheduler.instance)
+        _ = addPet.subscribe()
+        expect(addPet.asObservable()).first.notTo(beNil())
       }
       
       it ("Can add pet using PromiseKit") {
@@ -93,14 +69,13 @@ class TableOfContentsSpec: QuickSpec {
         })
       }
       
-      it("can parse model") {
+      it("can get pet list") {
         waitUntil(timeout: 10, action: { (done) in
           
-          MoyaProvider<PetService.AddPet>().requestModel(PetService.AddPet(body: Pet(id: 123, name: "123")), completion: { (result) in
+          MoyaProvider.default.requestModel(PetService.GetPetList(status: .pending), completion: { (result) in
             switch result {
-            case .success(let pet):
-              expect(pet.id).to(equal(123))
-              print(pet)
+            case .success(let pets):
+              expect(pets).notTo(beEmpty())
               break
             case .failure(let error):
               fail(error.localizedDescription)

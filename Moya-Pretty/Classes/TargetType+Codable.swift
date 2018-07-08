@@ -43,29 +43,11 @@ open class JSONCodableTarget<InputModel: Encodable, OutputModel: Decodable>: Enc
 }
 
 extension TargetType where Self: EncodableMixin {
-  public var task: Task {
+  public var task: Task {    
     return .requestJSONEncodable(body)
   }
 }
 
-extension TargetType {
-  public var task: Task {
-    return .requestPlain
-  }
-  
-  public var sampleData: Data {
-    return "You should implement your own sample data if needed.".data(using: .utf8)!
-  }
-  
-  var headers: [String : String]? {
-    return nil
-  }    
-}
-
-extension Cancellable {
-  /// Finish the function chain and avoid warnings.
-  public func cauterize() -> Void {}
-}
 
 
 

@@ -64,3 +64,24 @@ extension MoyaProvider where Target: MappableResponseType {
   }
 }
 #endif
+
+#if canImport(ObjectMapper) && canImport(XMLDictionary)
+extension MoyaProvider where Target: MappableResponseType {
+  /*
+   Request mappable object using PromiseKit.
+   **/
+  public func requestXmlModel(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
+    return Promise<Target.MappableResponseModel>.init { (seal) in
+      _ = self.requestXmlModel(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+        switch result {
+        case .success(let model):
+          seal.fulfill(model)
+        case .failure(let error):
+          seal.reject(error)
+        }
+      })
+    }
+  }
+}
+#endif
+

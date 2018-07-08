@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* CodableTests.swift */; };
+		8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */; };
+		8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */; };
+		8E5C63C020F2107400012717 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C63BF20F2107400012717 /* Models.swift */; };
 		8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EECF71520EC702E000FDAB3 /* Demo.swift */; };
 		C97CC4A9A47302DAF65126E4 /* Pods_Moya_Pretty_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -19,9 +22,12 @@
 		5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Moya-Pretty_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Pretty_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4DFD6920F1459800F88F01 /* Moya-Pretty.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Moya-Pretty.podspec"; path = "../Moya-Pretty.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
+		8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperXMLTests.swift; sourceTree = "<group>"; };
+		8E5C63BF20F2107400012717 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		8EECF71520EC702E000FDAB3 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,8 +68,11 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				8E5C63BF20F2107400012717 /* Models.swift */,
 				8EECF71520EC702E000FDAB3 /* Demo.swift */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* CodableTests.swift */,
+				8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */,
+				8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -212,6 +221,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -228,6 +238,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,8 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */,
+				8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */,
 				8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */,
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* CodableTests.swift in Sources */,
+				8E5C63C020F2107400012717 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

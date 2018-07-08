@@ -9,33 +9,6 @@
 import Foundation
 import Moya_Pretty
 import Moya
-import ObjectMapper
-
-struct Pet: Decodable, Encodable {
-  let id: Int
-  let name: String
-}
-
-class MappablePet: Mappable {
-  var id: Int?
-  var name: String?
-  
-  required init?(map: Map) {}
-  
-  // Mappable
-  func mapping(map: Map) {
-    id <- map["id"]
-    name <- map["name"]
-  }
-}
-
-extension PetService {
-  // POST api/pet
-  class AddPetMappable: ObjectMappableTarget<MappablePet, MappablePet>, TargetType, Service {
-    var method = Moya.Method.post
-    var path = "pet/"
-  }
-}
 
 protocol Service {
   var baseURL: URL {get}
@@ -44,7 +17,7 @@ protocol Service {
 
 extension Service {
   var baseURL: URL {
-    return URL(string: "http://petstore.swagger.io/v2")!
+    return URL(string: "https://virtserver.swaggerhub.com/arthurgau0419/Moya-Pretty-SampleAPI/1.0.0")!
   }
   var headers: [String : String]? {
     return nil
@@ -52,19 +25,11 @@ extension Service {
 }
 
 struct PetService {
-  // Generic Provider
-  static func provider<Target: TargetType>(_ type: Target.Type) -> MoyaProvider<Target> {
-    return MoyaProvider<Target>(
-      plugins: [
-        FlexibleAccessTokenPlugin(tokenClosure: "some token", httpHeaderField: "Authorization", httpHeaderValueFormat: "Auth %@")
-      ]
-    )
-  }
   
   // POST api/pet
   class AddPet: JSONCodableTarget<Pet, Pet>, TargetType, Service {
     var method = Moya.Method.post
-    var path = "pet/"
+    var path = "pet/"    
   }
   
   // GET api/pet/{id}
@@ -80,10 +45,23 @@ struct PetService {
   }
   
   // GET api/pet
-  class GetPetList: JSONDecodableTarget<[Pet]>, TargetType, Service {
+  class GetPetList: JSONDecodableTarget<[Pet]>, TargetType, Service, FilterableTarget {
     var method = Moya.Method.get
-    var path = "pet/"
+    var path = "pet/findByStatus"
     var task = Task.requestPlain
+    enum Status: String {
+      case available = "available"
+      case pending = "pending"
+      case sold = "sold"
+    }
+    let status: Status
+    var filter: [String : Any] {
+      return ["status": status.rawValue]
+    }
+    init(status: Status = .available) {
+      self.status = status
+      super.init()
+    }
   }
   
   // GET api/pet/?filterField=filterValue
@@ -102,19 +80,33 @@ struct PetService {
   
 }
 
+extension PetService {
+  // POST api/pet
+  class AddPetMappable: ObjectMappableTarget<MappablePet, MappablePet>, TargetType, Service {
+    var method = Moya.Method.post
+    var path = "pet/"
+  }
+  // POST api/pet
+  class AddPetMappableXML: ObjectMappableTarget<XMLMappablePet, XMLMappablePet>, XMLTargetType, Service {
+    var method = Moya.Method.post
+    var path = "pet/"
+  }
+}
+
 extension MoyaProvider {
   class var `default`: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-      InternationalizationPlugin(languageCode: "zh-tw")
+      InternationalizationPlugin(languageCode: "zh-tw"),
+      AcceptHeaderPlugin.init(accepts: [.json])
       ])
   }
-  convenience init(log: Bool) {
-    var plugins: [PluginType] = []
-    if log {
-      plugins.append(NetworkLoggerPlugin())
-    }
-    self.init(plugins: plugins)
-  }
+  class var xml: MoyaProvider<Target> {
+    return MoyaProvider<Target>.init(plugins: [
+      NetworkLoggerPlugin(),
+      InternationalizationPlugin(languageCode: "zh-tw"),
+      AcceptHeaderPlugin.init(accepts: [.xml])
+      ])
+  }  
 }
 
