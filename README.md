@@ -68,7 +68,7 @@ switch result {
 > - MappableResponseTarget<Response>
 > - XMLTargetType
 
-### Pligins
+### Plugins
 >  Useful plugins
 >
 > - AcceptHeaderPlugin
