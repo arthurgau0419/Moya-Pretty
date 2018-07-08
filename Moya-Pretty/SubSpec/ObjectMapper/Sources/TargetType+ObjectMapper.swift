@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 import ObjectMapper
+import Alamofire
 
 public protocol MappableBodyType {
   associatedtype MappableBodyModel: BaseMappable

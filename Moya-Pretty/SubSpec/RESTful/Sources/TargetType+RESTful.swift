@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import Alamofire
 
 public protocol FilterableTarget {
   /// Filter fields in RESTful url query.

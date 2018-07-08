@@ -27,8 +27,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'XMLDictionary' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/XMLDictionary/Sources/*'
-    ss.dependency 'Moya-Pretty/Core'
-    ss.dependency 'ObjectMapper'
+    ss.dependency 'Moya-Pretty/ObjectMapper'
     ss.dependency 'XMLDictionary'
   end
 
