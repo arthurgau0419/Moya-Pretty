@@ -18,7 +18,7 @@ public protocol MappableResponseType {
   associatedtype MappableResponseModel: BaseMappable
 }
 
-open class ObjectMappableBodyTarget<InputModel: Mappable>: MappableBodyType {
+open class MappableBodyTarget<InputModel: Mappable>: MappableBodyType {
   public var body: InputModel
   public typealias MappableBodyModel = InputModel
   public init(body: InputModel) {
@@ -26,12 +26,12 @@ open class ObjectMappableBodyTarget<InputModel: Mappable>: MappableBodyType {
   }
 }
 
-open class ObjectMappableResponseTarget<OutputModel: BaseMappable>: MappableResponseType {
+open class MappableResponseTarget<OutputModel: BaseMappable>: MappableResponseType {
   public typealias MappableResponseModel = OutputModel
   public init() {}
 }
 
-open class ObjectMappableTarget<InputModel: BaseMappable, OutputModel: BaseMappable>: MappableBodyType, MappableResponseType {
+open class MappableTarget<InputModel: BaseMappable, OutputModel: BaseMappable>: MappableBodyType, MappableResponseType {
   public var body: InputModel
   public typealias MappableBodyModel = InputModel
   public typealias MappableResponseModel = OutputModel

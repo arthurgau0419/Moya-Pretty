@@ -20,7 +20,7 @@ public protocol EncodableType {
   var body: EncodableModel {get}
 }
 
-open class JSONEncodableTarget<InputModel: Encodable>: EncodableType {
+open class EncodableTarget<InputModel: Encodable>: EncodableType {
   public var body: InputModel
   public typealias EncodableModel = InputModel
   public init(body: InputModel) {
@@ -28,12 +28,12 @@ open class JSONEncodableTarget<InputModel: Encodable>: EncodableType {
   }
 }
 
-open class JSONDecodableTarget<OutputModel: Decodable>: DecodableType {
+open class DecodableTarget<OutputModel: Decodable>: DecodableType {
   public typealias DecodableModel = OutputModel
   public init() {}
 }
 
-open class JSONCodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableType, DecodableType {
+open class CodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableType, DecodableType {
   public var body: InputModel
   public typealias EncodableModel = InputModel
   public typealias DecodableModel = OutputModel

@@ -27,13 +27,13 @@ extension Service {
 struct PetService {
   
   // POST api/pet
-  class AddPet: JSONCodableTarget<Pet, Pet>, TargetType, Service {
+  class AddPet: CodableTarget<Pet, Pet>, TargetType, Service {
     var method = Method.post
     var path = "pet/"    
   }
   
   // GET api/pet/{id}
-  class GetPet: JSONDecodableTarget<Pet>, TargetType, Service {
+  class GetPet: DecodableTarget<Pet>, TargetType, Service {
     var method = Method.get
     var path: String { return "/pet/\(id)/"}
     let id: Int
@@ -45,7 +45,7 @@ struct PetService {
   }
   
   // GET api/pet
-  class GetPetList: JSONDecodableTarget<[Pet]>, TargetType, Service, FilterableTarget {
+  class GetPetList: DecodableTarget<[Pet]>, TargetType, Service, FilterableTarget {
     var method = Method.get
     var path = "pet/findByStatus"
     var task = Task.requestPlain
@@ -65,7 +65,7 @@ struct PetService {
   }
   
   // GET api/pet/?filterField=filterValue
-  class GetPetsWithFilter: JSONDecodableTarget<Pet>, TargetType, Service, FilterableTarget {
+  class GetPetsWithFilter: DecodableTarget<Pet>, TargetType, Service, FilterableTarget {
     var method = Method.get
     var path = "pet/"
     var sampleData: Data {
@@ -82,12 +82,12 @@ struct PetService {
 
 extension PetService {
   // POST api/pet
-  class AddPetMappable: ObjectMappableTarget<MappablePet, MappablePet>, TargetType, Service {
+  class AddPetMappable: MappableTarget<MappablePet, MappablePet>, TargetType, Service {
     var method = Method.post
     var path = "pet/"
   }
   // POST api/pet
-  class AddPetMappableXML: ObjectMappableTarget<XMLMappablePet, XMLMappablePet>, XMLTargetType, Service {
+  class AddPetMappableXML: MappableTarget<XMLMappablePet, XMLMappablePet>, XMLTargetType, Service {
     var method = Method.post
     var path = "pet/"
   }

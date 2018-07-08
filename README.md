@@ -5,8 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![Platform](https://img.shields.io/cocoapods/p/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 
-*Moya-Pretty* provides some *class based* generic implement  Inspired by [*Moya*](https://github.com/Moya/Moya) and [*Retfofit*](https://github.com/square/retrofit).
+*Moya-Pretty* provides many powerful extensions like *generic class based target*, *plugins*, even *RESTful traits*. This allows you to declare Moya Target more pretty and without writing those extensions again by yourself. 
+Inspired by [*Moya*](https://github.com/Moya/Moya) and [*Retfofit*](https://github.com/square/retrofit). 👍 👍 👍
 
+![Moya-Pretty Overview](web/diagram.png)
 
 ## Generic<> Target
 ### Codable
@@ -15,7 +17,7 @@ CodableTarget<Body, Response>
 EncodableTarget<Body>
 DecodableTarget<Response>
 ### ObjectMapper
-*Json, Xml mapping*
+*json, xml mapping*
 MappableTarget<Body, Response>
 MappableBodyTarget<Body>
 MappableResponseTarget<Response>
@@ -24,15 +26,15 @@ MappableResponseTarget<Response>
 Simply, declare your target class:
 ```swift
 struct PetService {  
-  class PostPetThenResponsePet: JSONCodableTarget<Pet, Pet>, BaseTargetType {
+  class PostPetThenResponsePet: CodableTarget<Pet, Pet>, BaseTargetType {
     var method = Method.post
     var path = "pet/"    
   }
-  class PostPetOnly: JSONEncodableTarget<Pet>, BaseTargetType {
+  class PostPetOnly: EncodableTarget<Pet>, BaseTargetType {
     var method = Method.post
     var path = "pet/"    
   }
-  class GetPets: JSONDecodableTarget<[Pet]>, BaseTargetType {
+  class GetPets: DecodableTarget<[Pet]>, BaseTargetType {
     var method = Method.get
     var path = "pet/"    
   }
