@@ -8,8 +8,11 @@
 [![Version](https://img.shields.io/cocoapods/v/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![License](https://img.shields.io/cocoapods/l/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![Platform](https://img.shields.io/cocoapods/p/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Moya-ObjectMapper.svg)](https://cocoapods.org/pods/Moya-Pretty)
+![Swift 4.2](https://img.shields.io/badge/Swift-4.2-blue.svg)
 
-*Moya-Pretty* provides many powerful extensions like *generic class-based target*, *plugins*, even *RESTful traits*. This allows you to declare Moya Target more pretty and without writing those extensions again by yourself. 
+`Moya-Pretty` provides many convenient extensions like *generic class-based target*, *plugins*, even *RESTful traits*. This allows you to declare Moya Target more pretty and without writing those extensions again by yourself. 
+
 Inspired by [*Moya*](https://github.com/Moya/Moya) and [*Retrofit*](https://github.com/square/retrofit). 👍 👍 👍
 
 ![Moya-Pretty Overview](web/diagram.jpg)
@@ -18,18 +21,18 @@ Inspired by [*Moya*](https://github.com/Moya/Moya) and [*Retrofit*](https://gith
 Simply, declare your target class:
 ```swift
 struct PetService {  
-class PostPetThenResponsePet: CodableTarget<Pet, Pet>, BaseTargetType {
-var method = Method.post
-var path = "pet/"    
-}
-class PostPetOnly: EncodableTarget<Pet>, BaseTargetType {
-var method = Method.post
-var path = "pet/"    
-}
-class GetPets: DecodableTarget<[Pet]>, BaseTargetType {
-var method = Method.get
-var path = "pet/"    
-}
+  class PostPetThenResponsePet: CodableTarget<Pet, Pet>, BaseTargetType {
+    var method = Method.post
+    var path = "pet/"    
+    }
+  class PostPetOnly: EncodableTarget<Pet>, BaseTargetType {
+    var method = Method.post
+    var path = "pet/"    
+  }
+  class GetPets: DecodableTarget<[Pet]>, BaseTargetType {
+    var method = Method.get
+    var path = "pet/"    
+  }
 }
 ```
 
@@ -40,19 +43,19 @@ let pet = Pet(id: 1, name: "Obi")
 let target = PetService.AddPet(body: pet)
 provider.requestModel(target, completion: { (result) in
 switch result {
-case .success(let pet):
-// Pet model here 🎉 🎉 🎉
-print(pet.name)
-case .failure(let error):
-fail(error.localizedDescription)
-}
+  case .success(let pet):
+    // Pet model here 🎉 🎉 🎉
+    print(pet.name)
+  case .failure(let error):
+    fail(error.localizedDescription)
+  }
 )
 
 ```
 
 ## Documention
 
-### Generic<> Target
+### Generic<T> Target
 
 > `Codable` - decode, encode Json.
 >
@@ -67,14 +70,14 @@ fail(error.localizedDescription)
 > - XMLTargetType
 
 ### Pligins
-> 
+>  Useful plugins
 >
 > - AcceptHeaderPlugin
 > - FlexibleAccessTokenPlugin
 > - InternationalizationPlugin
 
 ### RESTful
-> 
+>  Common RESTful trait
 >
 > - FilterableTarget
 > - FormPostableTarget
@@ -122,12 +125,7 @@ firstly {
 
 
 ## Example
-
 `pod try Moya-Pretty`
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
