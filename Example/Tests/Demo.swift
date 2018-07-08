@@ -6,7 +6,7 @@
 //  Copyright © 2018年 CocoaPods. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import Moya_Pretty
 import Moya
 
@@ -28,13 +28,13 @@ struct PetService {
   
   // POST api/pet
   class AddPet: JSONCodableTarget<Pet, Pet>, TargetType, Service {
-    var method = Moya.Method.post
+    var method = Method.post
     var path = "pet/"    
   }
   
   // GET api/pet/{id}
   class GetPet: JSONDecodableTarget<Pet>, TargetType, Service {
-    var method = Moya.Method.get
+    var method = Method.get
     var path: String { return "/pet/\(id)/"}
     let id: Int
     
@@ -46,7 +46,7 @@ struct PetService {
   
   // GET api/pet
   class GetPetList: JSONDecodableTarget<[Pet]>, TargetType, Service, FilterableTarget {
-    var method = Moya.Method.get
+    var method = Method.get
     var path = "pet/findByStatus"
     var task = Task.requestPlain
     enum Status: String {
@@ -66,7 +66,7 @@ struct PetService {
   
   // GET api/pet/?filterField=filterValue
   class GetPetsWithFilter: JSONDecodableTarget<Pet>, TargetType, Service, FilterableTarget {
-    var method = Moya.Method.get
+    var method = Method.get
     var path = "pet/"
     var sampleData: Data {
       return try! JSONEncoder().encode([Pet(id: 1, name: "")])
@@ -83,12 +83,12 @@ struct PetService {
 extension PetService {
   // POST api/pet
   class AddPetMappable: ObjectMappableTarget<MappablePet, MappablePet>, TargetType, Service {
-    var method = Moya.Method.post
+    var method = Method.post
     var path = "pet/"
   }
   // POST api/pet
   class AddPetMappableXML: ObjectMappableTarget<XMLMappablePet, XMLMappablePet>, XMLTargetType, Service {
-    var method = Moya.Method.post
+    var method = Method.post
     var path = "pet/"
   }
 }

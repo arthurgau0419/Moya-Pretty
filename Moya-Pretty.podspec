@@ -30,16 +30,6 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  # s.resource_bundles = {
-  #   'Moya-Pretty' => ['Moya-Pretty/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
-  # s.dependency 'Moya', '~> 11.0'
-  # s.dependency 'Moya/RxSwift'
-
   s.subspec 'Core' do |ss|
     ss.dependency 'Moya', '~> 11.0'
     ss.source_files = 'Moya-Pretty/Classes/**/*'
@@ -58,7 +48,7 @@ TODO: Add long description of the pod here.
     ss.dependency 'XMLDictionary'
   end
 
-  s.subspec 'Promise' do |ss|
+  s.subspec 'PromiseKit' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/Promise/Sources/*'
     ss.dependency 'Moya-Pretty/Core'
     ss.dependency 'PromiseKit'
@@ -71,10 +61,12 @@ TODO: Add long description of the pod here.
   end
 
   s.subspec 'RESTful' do |ss|
+    ss.dependency 'Moya-Pretty/Core'
     ss.source_files = 'Moya-Pretty/SubSpec/RESTful/Sources/*'
   end
 
   s.subspec 'Plugins' do |ss|
+    ss.dependency 'Moya-Pretty/Core'
     ss.source_files = 'Moya-Pretty/SubSpec/Plugins/Sources/*'
   end
 

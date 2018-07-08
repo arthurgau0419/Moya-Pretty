@@ -8,19 +8,19 @@
 import Foundation
 import Moya
 
-public protocol DecodableMixin {
+public protocol DecodableType {
   /// Decodable model type for requestModel() output.
   associatedtype DecodableModel: Decodable
 }
 
-public protocol EncodableMixin {
+public protocol EncodableType {
   /// Encodable model type for JSON request body.
   associatedtype EncodableModel: Encodable
   /// Encodable model for JSON request body.
   var body: EncodableModel {get}
 }
 
-open class JSONEncodableTarget<InputModel: Encodable>: EncodableMixin {
+open class JSONEncodableTarget<InputModel: Encodable>: EncodableType {
   public var body: InputModel
   public typealias EncodableModel = InputModel
   public init(body: InputModel) {
@@ -28,12 +28,12 @@ open class JSONEncodableTarget<InputModel: Encodable>: EncodableMixin {
   }
 }
 
-open class JSONDecodableTarget<OutputModel: Decodable>: DecodableMixin {
+open class JSONDecodableTarget<OutputModel: Decodable>: DecodableType {
   public typealias DecodableModel = OutputModel
   public init() {}
 }
 
-open class JSONCodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableMixin, DecodableMixin {
+open class JSONCodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableType, DecodableType {
   public var body: InputModel
   public typealias EncodableModel = InputModel
   public typealias DecodableModel = OutputModel
@@ -42,7 +42,7 @@ open class JSONCodableTarget<InputModel: Encodable, OutputModel: Decodable>: Enc
   }
 }
 
-extension TargetType where Self: EncodableMixin {
+extension TargetType where Self: EncodableType {
   public var task: Task {    
     return .requestJSONEncodable(body)
   }

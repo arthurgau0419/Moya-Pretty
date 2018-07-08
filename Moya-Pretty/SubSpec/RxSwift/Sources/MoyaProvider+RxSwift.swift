@@ -9,7 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 
-public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableMixin {
+public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableType {
   /// Designated request-making method.
   ///
   /// - Parameters:

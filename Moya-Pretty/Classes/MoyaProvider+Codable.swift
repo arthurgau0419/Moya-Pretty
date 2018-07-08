@@ -9,7 +9,7 @@ import Foundation
 import Moya
 import Result
 
-extension MoyaProvider where MoyaProvider.Target: DecodableMixin {
+extension MoyaProvider where MoyaProvider.Target: DecodableType {
   open func requestModel(_ target: Target, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.DecodableModel, MoyaError>) -> Void)) -> Cancellable {
     
     return self.request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in

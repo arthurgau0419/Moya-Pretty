@@ -6,7 +6,7 @@ target 'Moya-Pretty_Tests' do
   pod 'Moya-Pretty/RESTful', :path => '../'
   pod 'Moya-Pretty/Plugins', :path => '../'
   pod 'Moya-Pretty/RxSwift', :path => '../'
-  pod 'Moya-Pretty/Promise', :path => '../'
+  pod 'Moya-Pretty/PromiseKit', :path => '../'
   
   pod 'RxTest', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'

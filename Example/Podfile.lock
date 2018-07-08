@@ -9,11 +9,13 @@ PODS:
   - Moya-Pretty/ObjectMapper (0.1.0):
     - Moya-Pretty/Core
     - ObjectMapper
-  - Moya-Pretty/Plugins (0.1.0)
-  - Moya-Pretty/Promise (0.1.0):
+  - Moya-Pretty/Plugins (0.1.0):
+    - Moya-Pretty/Core
+  - Moya-Pretty/PromiseKit (0.1.0):
     - Moya-Pretty/Core
     - PromiseKit
-  - Moya-Pretty/RESTful (0.1.0)
+  - Moya-Pretty/RESTful (0.1.0):
+    - Moya-Pretty/Core
   - Moya-Pretty/RxSwift (0.1.0):
     - Moya-Pretty/Core
     - Moya/RxSwift
@@ -57,7 +59,7 @@ DEPENDENCIES:
   - Moya-Pretty (from `../`)
   - Moya-Pretty/ObjectMapper (from `../`)
   - Moya-Pretty/Plugins (from `../`)
-  - Moya-Pretty/Promise (from `../`)
+  - Moya-Pretty/PromiseKit (from `../`)
   - Moya-Pretty/RESTful (from `../`)
   - Moya-Pretty/RxSwift (from `../`)
   - Moya-Pretty/XMLDictionary (from `../`)
@@ -91,7 +93,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  Moya-Pretty: 6f83ba689bce0d46c87ad9efbb9d0c21f3bc6735
+  Moya-Pretty: 1fb7db44503afcffb26c59e16459c83308f74747
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
@@ -104,6 +106,6 @@ SPEC CHECKSUMS:
   RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 122941ed3e39f5516604cbba26bf5c1109717d42
+PODFILE CHECKSUM: cea8e7046d6355e585866b1f511b5652a8cab103
 
 COCOAPODS: 1.5.3

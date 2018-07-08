@@ -27,7 +27,7 @@ extension MoyaProvider {
   }
 }
 
-extension MoyaProvider where Target: DecodableMixin {
+extension MoyaProvider where Target: DecodableType {
   /*
    Request deodable object using PromiseKit.
    **/
