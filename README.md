@@ -4,11 +4,11 @@
 
 # Moya-Pretty
 
-[![CI Status](https://img.shields.io/travis/arthurgau0419/Moya-Pretty.svg?style=flat)](https://travis-ci.org/arthurgau0419/Moya-Pretty)
+[![Build Status](https://travis-ci.org/arthurgau0419/Moya-Pretty.svg?branch=master)](https://travis-ci.org/arthurgau0419/Moya-Pretty)
 [![Version](https://img.shields.io/cocoapods/v/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![License](https://img.shields.io/cocoapods/l/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![Platform](https://img.shields.io/cocoapods/p/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
-![Swift 4.2](https://img.shields.io/badge/Swift-4.2-blue.svg)
+![Swift 4.1](https://img.shields.io/badge/Swift-4.1-blue.svg)
 
 `Moya-Pretty` provides many convenient extensions like *generic class-based target*, *plugins*, even *RESTful traits*. This allows you to declare Moya Target more pretty and without writing those extensions again by yourself. 
 
