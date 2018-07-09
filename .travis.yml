@@ -15,3 +15,8 @@ before_install:
 script:
 - set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
+deploy:
+  provider: script
+  script: ./scripts/push.sh
+  on:
+    tags: true
