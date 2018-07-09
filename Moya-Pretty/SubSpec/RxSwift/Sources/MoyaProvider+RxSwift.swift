@@ -8,6 +8,9 @@
 import Foundation
 import Moya
 import RxSwift
+#if canImport(ObjectMapper)
+import ObjectMapper
+#endif
 
 public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableType {
   /// Designated request-making method.
@@ -16,9 +19,9 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableTy
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single decodable object.
-  public func requestModel(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
+  public func requestModel(_ token: Base.Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
     return Single<Base.Target.DecodableModel>.create { [weak base] single in
-      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestModel(token, callbackQueue: callbackQueue, progress: nil, completion: { result in
+      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestModel(token, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData, callbackQueue: callbackQueue, progress: nil, completion: { result in
         switch result {
         case .success(let model):
           single(.success(model))
@@ -41,9 +44,9 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single mappable object.
-  public func requestModel(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
+  public func requestModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return Single<Base.Target.MappableResponseModel>.create { [weak base] single in
-      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestModel(token, callbackQueue: callbackQueue, progress: nil, completion: { result in
+      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { result in
         switch result {
         case .success(let model):
           single(.success(model))
@@ -67,9 +70,9 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single mappable object.
-  public func requestXmlModel(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
+  public func requestXmlModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return Single<Base.Target.MappableResponseModel>.create { [weak base] single in
-      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestXmlModel(token, callbackQueue: callbackQueue, progress: nil, completion: { result in
+      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestXmlModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { result in
         switch result {
         case .success(let model):
           single(.success(model))

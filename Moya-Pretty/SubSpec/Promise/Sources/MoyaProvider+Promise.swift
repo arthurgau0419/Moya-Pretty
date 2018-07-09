@@ -8,6 +8,9 @@
 import Foundation
 import Moya
 import PromiseKit
+#if canImport(ObjectMapper)
+import ObjectMapper
+#endif
 
 extension MoyaProvider {
   /*
@@ -31,9 +34,9 @@ extension MoyaProvider where Target: DecodableType {
   /*
    Request deodable object using PromiseKit.
    **/
-  public func requestModel(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel>  {
+  public func requestModel(_ token: Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel>  {
     return Promise<Target.DecodableModel>.init { (seal) in
-      _ = self.requestModel(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      _ = self.requestModel(token, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -50,9 +53,9 @@ extension MoyaProvider where Target: MappableResponseType {
   /*
    Request mappable object using PromiseKit.
    **/
-  public func requestModel(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
+  public func requestModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
     return Promise<Target.MappableResponseModel>.init { (seal) in
-      _ = self.requestModel(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      _ = self.requestModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -70,9 +73,9 @@ extension MoyaProvider where Target: MappableResponseType {
   /*
    Request mappable object using PromiseKit.
    **/
-  public func requestXmlModel(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
+  public func requestXmlModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
     return Promise<Target.MappableResponseModel>.init { (seal) in
-      _ = self.requestXmlModel(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      _ = self.requestXmlModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
