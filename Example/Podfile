@@ -8,11 +8,11 @@ target 'Moya-Pretty_Tests' do
   pod 'Moya-Pretty/RxSwift', :path => '../'
   pod 'Moya-Pretty/PromiseKit', :path => '../'
   
-  pod 'RxTest', '~> 4.0'
-  pod 'RxCocoa', '~> 4.0'
+  pod 'RxTest'
+  pod 'RxCocoa'
   pod 'RxBlocking'
   
-  pod 'Quick', '~> 1.2.0'
-  pod 'Nimble', '~> 7.0.2'
+  pod 'Quick'
+  pod 'Nimble'
   pod 'RxNimble'
 end
