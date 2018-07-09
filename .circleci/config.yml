@@ -5,7 +5,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/Example
+    working_directory: /Users/distiller/Moya-Pretty/Example
 
     # Specify the Xcode version to use
     macos:
