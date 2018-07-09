@@ -24,13 +24,15 @@ extension TargetType where Self: MappableBodyType, Self: XMLTargetType {
 }
 
 extension MoyaProvider where MoyaProvider.Target: MappableResponseType {
-  open func requestXmlModel(_ target: Target, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.MappableResponseModel, MoyaError>) -> Void)) -> Cancellable {
+  open func requestXmlModel(_ target: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.MappableResponseModel, MoyaError>) -> Void)) -> Cancellable {
     return self.request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in
       let modelResult = result.flatMap({ (response) -> Result<Target.MappableResponseModel, MoyaError> in
         do {
+          let option = option ?? target.mapperOption
+          let mapper = Mapper<Target.MappableResponseModel>(context: option.context, shouldIncludeNilValues: option.shouldIncludeNilValues)
           guard
             let dictionary = NSDictionary(xmlData: response.data) as? [String: Any],
-          let mappable = Target.MappableResponseModel(JSON: dictionary)
+            let mappable = mapper.map(JSON: dictionary)
             else {throw XMLDictionaryError.xmlMapping(response)}
           return Result.success(mappable)
         } catch let moyaError as MoyaError {

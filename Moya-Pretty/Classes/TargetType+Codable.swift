@@ -11,6 +11,7 @@ import Moya
 public protocol DecodableType {
   /// Decodable model type for requestModel() output.
   associatedtype DecodableModel: Decodable
+  var decoder: JSONDecoder? {get}
 }
 
 public protocol EncodableType {
@@ -18,10 +19,12 @@ public protocol EncodableType {
   associatedtype EncodableModel: Encodable
   /// Encodable model for JSON request body.
   var body: EncodableModel {get}
+  var encoder: JSONEncoder? {get}
 }
 
 open class EncodableTarget<InputModel: Encodable>: EncodableType {
   public var body: InputModel
+  public var encoder: JSONEncoder?
   public typealias EncodableModel = InputModel
   public init(body: InputModel) {
     self.body = body
@@ -30,11 +33,14 @@ open class EncodableTarget<InputModel: Encodable>: EncodableType {
 
 open class DecodableTarget<OutputModel: Decodable>: DecodableType {
   public typealias DecodableModel = OutputModel
+  public var decoder: JSONDecoder?
   public init() {}
 }
 
 open class CodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableType, DecodableType {
   public var body: InputModel
+  public var encoder: JSONEncoder?
+  public var decoder: JSONDecoder?
   public typealias EncodableModel = InputModel
   public typealias DecodableModel = OutputModel
   public init(body: InputModel) {
@@ -43,8 +49,12 @@ open class CodableTarget<InputModel: Encodable, OutputModel: Decodable>: Encodab
 }
 
 extension TargetType where Self: EncodableType {
-  public var task: Task {    
-    return .requestJSONEncodable(body)
+  public var task: Task {
+    if let encoder = encoder {
+      return Task.requestCustomJSONEncodable(body, encoder: encoder)
+    } else {
+      return Task.requestJSONEncodable(body)
+    }
   }
 }
 
