@@ -6,10 +6,10 @@ osx_image: xcode9.4
 language: swift
 xcode_project: Example/Moya-Pretty.xcodeproj # path to your xcodeproj folder
 xcode_scheme: Moya-Pretty_Tests
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
+cache: cocoapods
+podfile: Example/Podfile
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
