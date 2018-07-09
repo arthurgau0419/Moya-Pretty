@@ -9,12 +9,13 @@ podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod repo update --silent
-- pod install
+- pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
 deploy:
   provider: script
-  script: ./scripts/push.sh
+  script: pod trunk push --allow-warnings
+  skip_cleanup: true
   on:
     tags: true
