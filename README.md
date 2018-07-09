@@ -4,7 +4,7 @@
 
 # Moya-Pretty
 
-[![CI Status](https://img.shields.io/travis/arthurgau0419@gmail.com/Moya-Pretty.svg?style=flat)](https://travis-ci.org/arthurgau0419@gmail.com/Moya-Pretty)
+[![CI Status](https://img.shields.io/travis/arthurgau0419/Moya-Pretty.svg?style=flat)](https://travis-ci.org/arthurgau0419/Moya-Pretty)
 [![Version](https://img.shields.io/cocoapods/v/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![License](https://img.shields.io/cocoapods/l/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
 [![Platform](https://img.shields.io/cocoapods/p/Moya-Pretty.svg?style=flat)](https://cocoapods.org/pods/Moya-Pretty)
