@@ -12,5 +12,5 @@ xcode_scheme: Moya-Pretty_Tests
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
