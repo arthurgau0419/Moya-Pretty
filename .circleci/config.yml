@@ -7,7 +7,6 @@ jobs:
       - BUNDLE_PATH: vendor/bundle
       - LC_ALL: en_US.UTF-8
       - LANG: en_US.UTF-8
-    working_directory: /Users/distiller/project/Example
     macos:
       xcode: "9.3.0"
     shell: /bin/bash --login -eo pipefail
