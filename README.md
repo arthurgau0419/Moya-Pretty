@@ -23,7 +23,7 @@ struct PetService {
   class PostPetThenResponsePet: CodableTarget<Pet, Pet>, BaseTargetType {
     var method = Method.post
     var path = "pet/"    
-    }
+  }
   class PostPetOnly: EncodableTarget<Pet>, BaseTargetType {
     var method = Method.post
     var path = "pet/"    
