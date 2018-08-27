@@ -9,6 +9,7 @@ import Foundation
 import Moya
 
 public struct JsonApiAcceptHeaderPlugin: PluginType {
+  public init() {}
   public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
     var newRequest = request
     newRequest.allHTTPHeaderFields?.updateValue("application/vnd.api+json", forKey: "Accept")
@@ -17,6 +18,7 @@ public struct JsonApiAcceptHeaderPlugin: PluginType {
 }
 
 public struct JsonApiContentTypeHeaderPlugin: PluginType {
+  public init() {}
   public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
     var newRequest = request
     newRequest.allHTTPHeaderFields?.updateValue("application/vnd.api+json", forKey: "Content-Type")
