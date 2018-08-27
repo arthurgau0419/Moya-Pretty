@@ -18,6 +18,11 @@ Pod::Spec.new do |s|
     ss.dependency 'Moya', '~> 11.0'
     ss.source_files = 'Moya-Pretty/Classes/**/*'
   end
+  
+  s.subspec 'Japx' do |ss|
+    ss.source_files = 'Moya-Pretty/SubSpec/Japx/Sources/*'
+    ss.dependency 'Japx/Codable'
+  end
 
   s.subspec 'ObjectMapper' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/ObjectMapper/Sources/*'
