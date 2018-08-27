@@ -8,6 +8,9 @@
 import Foundation
 import Moya
 import PromiseKit
+#if canImport(Japx)
+import Japx
+#endif
 #if canImport(ObjectMapper)
 import ObjectMapper
 #endif
@@ -47,6 +50,26 @@ extension MoyaProvider where Target: DecodableType {
     }
   }
 }
+
+#if canImport(Japx)
+extension MoyaProvider where Target: JapxDecodableType {
+  /*
+   Request jsonapi deodable object using PromiseKit.
+   **/
+  public func requestModel(_ token: Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel>  {
+    return Promise<Target.DecodableModel>.init { (seal) in
+      _ = self.requestModel(token, using: decoder, includeList: includeList, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+        switch result {
+        case .success(let model):
+          seal.fulfill(model)
+        case .failure(let error):
+          seal.reject(error)
+        }
+      })
+    }
+  }
+}
+#endif
 
 #if canImport(ObjectMapper)
 extension MoyaProvider where Target: MappableResponseType {

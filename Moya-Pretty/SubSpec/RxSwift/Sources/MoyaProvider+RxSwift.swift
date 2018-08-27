@@ -8,6 +8,9 @@
 import Foundation
 import Moya
 import RxSwift
+#if canImport(Japx)
+import Japx
+#endif
 #if canImport(ObjectMapper)
 import ObjectMapper
 #endif
@@ -35,6 +38,32 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableTy
     }
   }
 }
+
+#if canImport(Japx)
+public extension Reactive where Base: MoyaProviderType, Base.Target: JapxDecodableType {
+  /// Designated request-making method.
+  ///
+  /// - Parameters:
+  ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
+  ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
+  /// - Returns: Single decodable object.
+  public func requestModel(_ token: Base.Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
+    return Single<Base.Target.DecodableModel>.create { [weak base] single in
+      let cancellableToken = (base as? MoyaProvider<Base.Target>)?.requestModel(token, using: decoder, includeList: includeList, callbackQueue: callbackQueue, progress: nil, completion: { result in
+        switch result {
+        case .success(let model):
+          single(.success(model))
+        case .failure(let error):
+          single(.error(error))
+        }
+      })
+      return Disposables.create {
+        cancellableToken?.cancel()
+      }
+    }
+  }
+}
+#endif
 
 #if canImport(ObjectMapper)
 public extension Reactive where Base: MoyaProviderType, Base.Target: MappableResponseType {
