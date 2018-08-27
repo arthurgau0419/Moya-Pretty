@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Japx' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/Japx/Sources/*'
+    ss.dependency 'Moya-Pretty/Core'
     ss.dependency 'Japx/Codable'
   end
 

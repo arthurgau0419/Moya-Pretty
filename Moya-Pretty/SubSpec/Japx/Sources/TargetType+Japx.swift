@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 import Japx
+import Alamofire
 
 open class JapxEncodableTarget<InputModel: Encodable>: JapxEncodableType {
   public var body: InputModel

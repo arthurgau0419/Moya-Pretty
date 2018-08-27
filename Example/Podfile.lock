@@ -11,6 +11,7 @@ PODS:
     - Moya (~> 11.0)
   - Moya-Pretty/Japx (1.3):
     - Japx/Codable
+    - Moya-Pretty/Core
   - Moya-Pretty/ObjectMapper (1.3):
     - Moya-Pretty/Core
     - ObjectMapper
@@ -100,7 +101,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Japx: cc1a6a7f66e0c4a9bbc5c0d23ba0d4a28fa17c02
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  Moya-Pretty: 9dd51786280fef109f288c0c953818fa13faf6ff
+  Moya-Pretty: bba57fb839c87f58e59569150b8c32fa425a8136
   Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
