@@ -24,7 +24,7 @@ public protocol EncodableType {
 
 open class EncodableTarget<InputModel: Encodable>: EncodableType {
   public var body: InputModel
-  public var encoder: JSONEncoder?
+  open var encoder: JSONEncoder? { return nil }
   public typealias EncodableModel = InputModel
   public init(body: InputModel) {
     self.body = body
@@ -33,14 +33,14 @@ open class EncodableTarget<InputModel: Encodable>: EncodableType {
 
 open class DecodableTarget<OutputModel: Decodable>: DecodableType {
   public typealias DecodableModel = OutputModel
-  public var decoder: JSONDecoder?
+  open var decoder: JSONDecoder? { return nil }
   public init() {}
 }
 
 open class CodableTarget<InputModel: Encodable, OutputModel: Decodable>: EncodableType, DecodableType {
   public var body: InputModel
-  public var encoder: JSONEncoder?
-  public var decoder: JSONDecoder?
+  open var encoder: JSONEncoder? { return nil }
+  open var decoder: JSONDecoder? { return nil }
   public typealias EncodableModel = InputModel
   public typealias DecodableModel = OutputModel
   public init(body: InputModel) {
