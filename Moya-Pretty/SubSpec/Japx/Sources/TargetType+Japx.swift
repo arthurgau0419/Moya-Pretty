@@ -12,8 +12,8 @@ import Alamofire
 
 open class JapxEncodableTarget<InputModel: Encodable>: JapxEncodableType {
   public var body: InputModel
-  public var encoder: JSONEncoder?
-  public var japxEncoder: JapxEncoder?
+  open var encoder: JSONEncoder? { return nil }
+  open var japxEncoder: JapxEncoder? { return nil }
   public typealias EncodableModel = InputModel
   public init(body: InputModel) {
     self.body = body
@@ -22,17 +22,17 @@ open class JapxEncodableTarget<InputModel: Encodable>: JapxEncodableType {
 
 open class JapxDecodableTarget<OutputModel: Decodable>: JapxDecodableType {
   public typealias DecodableModel = OutputModel
-  public var decoder: JSONDecoder?
-  public var japxDecoder: JapxDecoder?
+  open var decoder: JSONDecoder? { return nil }
+  open var japxDecoder: JapxDecoder? { return nil }
   public init() {}
 }
 
 open class JapxCodableTarget<InputModel: Encodable, OutputModel: Decodable>: JapxEncodableType, JapxDecodableType {
   public var body: InputModel
-  public var encoder: JSONEncoder?
-  public var decoder: JSONDecoder?
-  public var japxEncoder: JapxEncoder?
-  public var japxDecoder: JapxDecoder?
+  open var encoder: JSONEncoder? { return nil }
+  open var decoder: JSONDecoder? { return nil }
+  open var japxEncoder: JapxEncoder? { return nil }
+  open var japxDecoder: JapxDecoder? { return nil }
   public typealias EncodableModel = InputModel
   public typealias DecodableModel = OutputModel
   public init(body: InputModel) {
