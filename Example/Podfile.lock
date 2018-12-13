@@ -1,62 +1,70 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Japx/Codable (1.0.2):
+  - Alamofire (4.8.0)
+  - Japx/Codable (1.0.3):
     - Japx/Core
-  - Japx/Core (1.0.2)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya-Pretty (1.3):
-    - Moya-Pretty/Core (= 1.3)
-  - Moya-Pretty/Core (1.3):
-    - Moya (~> 11.0)
-  - Moya-Pretty/Japx (1.3):
+  - Japx/Core (1.0.3)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya-Pretty (1.4.2):
+    - Moya-Pretty/Core (= 1.4.2)
+  - Moya-Pretty/Core (1.4.2):
+    - Moya (~> 12.0)
+  - Moya-Pretty/Japx (1.4.2):
     - Japx/Codable
     - Moya-Pretty/Core
-  - Moya-Pretty/ObjectMapper (1.3):
+  - Moya-Pretty/ObjectMapper (1.4.2):
     - Moya-Pretty/Core
     - ObjectMapper
-  - Moya-Pretty/Plugins (1.3):
+  - Moya-Pretty/Plugins (1.4.2):
     - Moya-Pretty/Core
-  - Moya-Pretty/PromiseKit (1.3):
+  - Moya-Pretty/PromiseKit (1.4.2):
     - Moya-Pretty/Core
     - PromiseKit
-  - Moya-Pretty/RESTful (1.3):
+  - Moya-Pretty/RESTful (1.4.2):
     - Moya-Pretty/Core
-  - Moya-Pretty/RxSwift (1.3):
+  - Moya-Pretty/RxSwift (1.4.2):
     - Moya-Pretty/Core
     - Moya/RxSwift
-  - Moya-Pretty/XMLDictionary (1.3):
+  - Moya-Pretty/XMLDictionary (1.4.2):
     - Moya-Pretty/ObjectMapper
     - XMLDictionary
-  - Moya/Core (11.0.2):
+  - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (11.0.2):
+    - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - Nimble (7.1.3)
-  - ObjectMapper (3.3.0)
-  - PromiseKit (6.3.4):
-    - PromiseKit/CorePromise (= 6.3.4)
-    - PromiseKit/Foundation (= 6.3.4)
-    - PromiseKit/UIKit (= 6.3.4)
-  - PromiseKit/CorePromise (6.3.4)
-  - PromiseKit/Foundation (6.3.4):
+  - Nimble (7.3.1)
+  - ObjectMapper (3.4.1)
+  - PromiseKit (6.7.0):
+    - PromiseKit/CorePromise (= 6.7.0)
+    - PromiseKit/Foundation (= 6.7.0)
+    - PromiseKit/UIKit (= 6.7.0)
+  - PromiseKit/CorePromise (6.7.0)
+  - PromiseKit/Foundation (6.7.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.3.4):
+  - PromiseKit/UIKit (6.7.0):
     - PromiseKit/CorePromise
-  - Quick (1.3.0)
-  - Result (3.2.4)
-  - RxBlocking (4.2.0):
+  - Quick (1.3.2)
+  - Result (4.0.0)
+  - RxAtomic (4.4.0)
+  - RxBlocking (4.4.0):
+    - RxAtomic (~> 4.4)
     - RxSwift (~> 4.0)
-  - RxCocoa (4.2.0):
+  - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
-  - RxNimble (4.1.0):
+  - RxNimble (4.4.0):
+    - RxNimble/RxBlocking (= 4.4.0)
+  - RxNimble/Core (4.4.0):
     - Nimble (~> 7.0)
-    - RxBlocking (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
-  - RxTest (4.2.0):
+    - RxSwift (~> 4.2)
+  - RxNimble/RxBlocking (4.4.0):
+    - RxBlocking
+    - RxNimble/Core
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - RxTest (4.4.0):
+    - RxAtomic (~> 4.4)
     - RxSwift (~> 4.0)
   - XMLDictionary (1.4.1)
 
@@ -86,6 +94,7 @@ SPEC REPOS:
     - PromiseKit
     - Quick
     - Result
+    - RxAtomic
     - RxBlocking
     - RxCocoa
     - RxNimble
@@ -98,20 +107,21 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Japx: cc1a6a7f66e0c4a9bbc5c0d23ba0d4a28fa17c02
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
-  Moya-Pretty: bba57fb839c87f58e59569150b8c32fa425a8136
-  Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
-  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
-  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RxBlocking: e339d8a6e752e25ade95ff858466c55436668f59
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Japx: 8b126421343f8b27b5de868477c37c10f5489eab
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Moya-Pretty: b262a46760bd784e70722ce77b8718f7bd9f605b
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  PromiseKit: 453ddcc947fe7b302f3ef41882b81d31c554df7f
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxNimble: ba6caf0195c37fd50dd4b967624b66ff580d781a
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
 PODFILE CHECKSUM: ee62b101b463a9fd79019ca6688bfdf5068ab10a
