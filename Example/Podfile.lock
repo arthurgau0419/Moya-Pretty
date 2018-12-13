@@ -5,27 +5,27 @@ PODS:
   - Japx/Core (1.0.3)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
-  - Moya-Pretty (1.4.2):
-    - Moya-Pretty/Core (= 1.4.2)
-  - Moya-Pretty/Core (1.4.2):
+  - Moya-Pretty (1.4.3):
+    - Moya-Pretty/Core (= 1.4.3)
+  - Moya-Pretty/Core (1.4.3):
     - Moya (~> 12.0)
-  - Moya-Pretty/Japx (1.4.2):
+  - Moya-Pretty/Japx (1.4.3):
     - Japx/Codable
     - Moya-Pretty/Core
-  - Moya-Pretty/ObjectMapper (1.4.2):
+  - Moya-Pretty/ObjectMapper (1.4.3):
     - Moya-Pretty/Core
     - ObjectMapper
-  - Moya-Pretty/Plugins (1.4.2):
+  - Moya-Pretty/Plugins (1.4.3):
     - Moya-Pretty/Core
-  - Moya-Pretty/PromiseKit (1.4.2):
+  - Moya-Pretty/PromiseKit (1.4.3):
     - Moya-Pretty/Core
     - PromiseKit
-  - Moya-Pretty/RESTful (1.4.2):
+  - Moya-Pretty/RESTful (1.4.3):
     - Moya-Pretty/Core
-  - Moya-Pretty/RxSwift (1.4.2):
+  - Moya-Pretty/RxSwift (1.4.3):
     - Moya-Pretty/Core
     - Moya/RxSwift
-  - Moya-Pretty/XMLDictionary (1.4.2):
+  - Moya-Pretty/XMLDictionary (1.4.3):
     - Moya-Pretty/ObjectMapper
     - XMLDictionary
   - Moya/Core (12.0.1):
@@ -110,7 +110,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Japx: 8b126421343f8b27b5de868477c37c10f5489eab
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Moya-Pretty: b262a46760bd784e70722ce77b8718f7bd9f605b
+  Moya-Pretty: 142371a827976989bd067d5cc139270d7812bdea
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   PromiseKit: 453ddcc947fe7b302f3ef41882b81d31c554df7f
