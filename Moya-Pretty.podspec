@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Moya-Pretty'
-  s.version          = '1.4.2'
+  s.version          = '1.4.3'
   s.summary          = 'Codable, ObjectMapper, RxSwift, PromiseKit, RESTful extensions for Moya.'
   s.description      = <<-DESC
     *Moya-Pretty* provides many convenient extensions like *generic class-based target*, *plugins*, even *RESTful traits*. This allows you to declare [Moya](https://github.com/Moya/Moya) Target more pretty and without writing those extensions again by yourself.
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'Moya', '~> 11.0'
+    ss.dependency 'Moya', '~> 12.0'
     ss.source_files = 'Moya-Pretty/Classes/**/*'
   end
   
@@ -60,5 +60,5 @@ Pod::Spec.new do |s|
   end
 
   s.default_subspecs = ['Core']
-  s.swift_version = '4.1'
+  s.swift_version = '4.2'
 end
