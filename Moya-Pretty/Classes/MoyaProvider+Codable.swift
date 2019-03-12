@@ -16,7 +16,7 @@ extension MoyaProvider where Target: DecodableType {
 
       let modelResult = result
         .flatMap { response -> Result<Target.DecodableModel, MoyaError> in
-          Result<Target.DecodableModel, MoyaError>(attempt: {
+          Result<Target.DecodableModel, MoyaError>(catching: {
             try response.toModel(target: target, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData)
           })
       }

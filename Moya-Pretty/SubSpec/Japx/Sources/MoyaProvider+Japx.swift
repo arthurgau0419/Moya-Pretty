@@ -17,7 +17,7 @@ extension MoyaProvider where MoyaProvider.Target: JapxDecodableType {
 
       let modelResult = result
         .flatMap { response in
-          Result<Target.DecodableModel, MoyaError>(attempt: {
+          Result<Target.DecodableModel, MoyaError>(catching: {
             try response.toModel(target: target, using: decoder, includeList: includeList)
           })
       }
