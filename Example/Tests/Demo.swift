@@ -97,14 +97,12 @@ extension MoyaProvider {
   class var `default`: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-//      InternationalizationPlugin(languageCode: "zh-tw"),
       AcceptHeaderPlugin.init(accepts: [.json])
       ])
   }
   class var xml: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-      InternationalizationPlugin(languageCode: "zh-tw"),
       AcceptHeaderPlugin.init(accepts: [.xml])
       ])
   }  
