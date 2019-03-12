@@ -97,7 +97,7 @@ extension MoyaProvider {
   class var `default`: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-      InternationalizationPlugin(languageCode: "zh-tw"),
+//      InternationalizationPlugin(languageCode: "zh-tw"),
       AcceptHeaderPlugin.init(accepts: [.json])
       ])
   }

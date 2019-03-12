@@ -48,6 +48,12 @@ Pod::Spec.new do |s|
     ss.dependency 'Moya-Pretty/Core'
     ss.dependency 'Moya/RxSwift'
   end
+  
+  s.subspec 'ReactiveSwift' do |ss|
+    ss.source_files = 'Moya-Pretty/SubSpec/ReactiveSwift/Sources/*'
+    ss.dependency 'Moya-Pretty/Core'
+    ss.dependency 'Moya/ReactiveSwift'
+  end
 
   s.subspec 'RESTful' do |ss|
     ss.dependency 'Moya-Pretty/Core'
