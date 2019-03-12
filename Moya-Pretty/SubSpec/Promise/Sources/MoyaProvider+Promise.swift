@@ -19,9 +19,9 @@ extension MoyaProvider {
   /*
    Request response using PromiseKit.
    **/
-  public func request(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Response>  {
+  public func request(_ token: Target, callbackQueue: DispatchQueue? = nil) -> Promise<Response> {
     return Promise<Response>.init { (seal) in
-      _ = self.request(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      request(token, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let response):
           seal.fulfill(response)
@@ -29,6 +29,7 @@ extension MoyaProvider {
           seal.reject(error)
         }
       })
+      .cauterize()
     }
   }
 }
@@ -37,9 +38,9 @@ extension MoyaProvider where Target: DecodableType {
   /*
    Request deodable object using PromiseKit.
    **/
-  public func requestModel(_ token: Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel>  {
+  public func requestModel(_ token: Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel> {
     return Promise<Target.DecodableModel>.init { (seal) in
-      _ = self.requestModel(token, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      requestModel(token, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -47,6 +48,7 @@ extension MoyaProvider where Target: DecodableType {
           seal.reject(error)
         }
       })
+        .cauterize()
     }
   }
 }
@@ -56,9 +58,9 @@ extension MoyaProvider where Target: JapxDecodableType {
   /*
    Request jsonapi deodable object using PromiseKit.
    **/
-  public func requestModel(_ token: Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel>  {
+  public func requestModel(_ token: Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.DecodableModel> {
     return Promise<Target.DecodableModel>.init { (seal) in
-      _ = self.requestModel(token, using: decoder, includeList: includeList, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      requestModel(token, using: decoder, includeList: includeList, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -66,6 +68,7 @@ extension MoyaProvider where Target: JapxDecodableType {
           seal.reject(error)
         }
       })
+      .cauterize()
     }
   }
 }
@@ -76,9 +79,9 @@ extension MoyaProvider where Target: MappableResponseType {
   /*
    Request mappable object using PromiseKit.
    **/
-  public func requestModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
+  public func requestModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel> {
     return Promise<Target.MappableResponseModel>.init { (seal) in
-      _ = self.requestModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      requestModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -86,6 +89,7 @@ extension MoyaProvider where Target: MappableResponseType {
           seal.reject(error)
         }
       })
+      .cauterize()
     }
   }
 }
@@ -96,9 +100,9 @@ extension MoyaProvider where Target: MappableResponseType {
   /*
    Request mappable object using PromiseKit.
    **/
-  public func requestXmlModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel>  {
+  public func requestXmlModel(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Promise<Target.MappableResponseModel> {
     return Promise<Target.MappableResponseModel>.init { (seal) in
-      _ = self.requestXmlModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
+      requestXmlModel(token, option: option, callbackQueue: callbackQueue, progress: nil, completion: { (result) in
         switch result {
         case .success(let model):
           seal.fulfill(model)
@@ -106,8 +110,8 @@ extension MoyaProvider where Target: MappableResponseType {
           seal.reject(error)
         }
       })
+      .cauterize()
     }
   }
 }
 #endif
-

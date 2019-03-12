@@ -25,51 +25,46 @@ extension Service {
 }
 
 struct PetService {
-  
+
   // POST api/pet
   class AddPet: CodableTarget<Pet, Pet>, TargetType, Service {
     var method = Method.post
-    var path = "pet/"    
+    var path = "pet/"
   }
-  
+
   // GET api/pet/{id}
   class GetPet: DecodableTarget<Pet>, TargetType, Service {
     var method = Method.get
     var path: String { return "/pet/\(id)/"}
     let id: Int
-    
+
     init(id: Int) {
       self.id = id
       super.init()
     }
   }
-  
+
   // GET api/pet
   class GetPetList: DecodableTarget<[Pet]>, TargetType, Service, FilterableTarget {
     var method = Method.get
     var path = "pet/findByStatus"
     var task = Task.requestPlain
-    enum Status: String {
-      case available = "available"
-      case pending = "pending"
-      case sold = "sold"
-    }
-    let status: Status
+    let status: Pet.Status
     var filter: [String : Any] {
       return ["status": status.rawValue]
     }
-    init(status: Status = .available) {
+    init(status: Pet.Status = .available) {
       self.status = status
       super.init()
     }
   }
-  
+
   // GET api/pet/?filterField=filterValue
   class GetPetsWithFilter: DecodableTarget<Pet>, TargetType, Service, FilterableTarget {
     var method = Method.get
     var path = "pet/"
     var sampleData: Data {
-      return try! JSONEncoder().encode([Pet(id: 1, name: "")])
+      return (try? JSONEncoder().encode([Pet(id: 1, name: "")])) ?? Data()
     }
     var filter: [String : Any]
     init(filter: [String : Any]) {
@@ -77,7 +72,7 @@ struct PetService {
       super.init()
     }
   }
-  
+
 }
 
 extension PetService {
@@ -97,16 +92,13 @@ extension MoyaProvider {
   class var `default`: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-      InternationalizationPlugin(languageCode: "zh-tw"),
       AcceptHeaderPlugin.init(accepts: [.json])
       ])
   }
   class var xml: MoyaProvider<Target> {
     return MoyaProvider<Target>.init(plugins: [
       NetworkLoggerPlugin(),
-      InternationalizationPlugin(languageCode: "zh-tw"),
       AcceptHeaderPlugin.init(accepts: [.xml])
       ])
-  }  
+  }
 }
-

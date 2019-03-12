@@ -10,27 +10,26 @@ import PromiseKit
 
 class CodableSpec: QuickSpec {
   let newPet = Pet(id: 1, name: "Obi")
-  
+
   override func spec() {
-        
+
     describe("Codable") {
-      
+
       it ("Can add pet") {
         waitUntil(timeout: 10, action: { (done) in
           MoyaProvider.default.requestModel(PetService.AddPet(body: self.newPet), completion: { (result) in
             switch result {
             case .success(let pet):
               print(pet)
-              break
             case .failure(let error):
               fail(error.localizedDescription)
             }
             done()
-          }).cauterize()
-          
+          })
+            .cauterize()
         })
       }
-      
+
       it ("Can get pet") {
         waitUntil(timeout: 10, action: { (done) in
           MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
@@ -41,11 +40,11 @@ class CodableSpec: QuickSpec {
               fail(error.localizedDescription)
             }
             done()
-          }).cauterize()
-          
+          })
+            .cauterize()
         })
       }
-      
+
       it ("Can add pet using RxSwift") {
         let provider = MoyaProvider<PetService.AddPet>.default
         let addPet = provider.rx
@@ -53,7 +52,7 @@ class CodableSpec: QuickSpec {
         _ = addPet.subscribe()
         expect(addPet.asObservable()).first.notTo(beNil())
       }
-      
+
       it ("Can add pet using PromiseKit") {
         waitUntil(timeout: 10, action: { (done) in
           firstly {
@@ -68,23 +67,20 @@ class CodableSpec: QuickSpec {
           }
         })
       }
-      
+
       it("can get pet list") {
         waitUntil(timeout: 10, action: { (done) in
-          
+
           MoyaProvider.default.requestModel(PetService.GetPetList(status: .pending), completion: { (result) in
             switch result {
             case .success(let pets):
               expect(pets).notTo(beEmpty())
-              break
             case .failure(let error):
               fail(error.localizedDescription)
-              break
             }
             done()
-          }).cauterize()
-          
-          
+          })
+            .cauterize()
         })
       }
     }

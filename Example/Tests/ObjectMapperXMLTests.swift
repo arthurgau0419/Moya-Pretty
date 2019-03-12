@@ -20,7 +20,7 @@ class ObjectMapperXMLSpec: QuickSpec {
   let newXmlMappablePet = XMLMappablePet(JSON: ["id": "1", "name":"Obi"])!
   override func spec() {
     describe("XMLDictionary") {
-      
+
       it ("Can add pet") {
         waitUntil(timeout: 10, action: { (done) in
           MoyaProvider.xml.requestXmlModel(PetService.AddPetMappableXML(body: self.newXmlMappablePet), completion: { (result) in
@@ -32,16 +32,17 @@ class ObjectMapperXMLSpec: QuickSpec {
               fail(error.localizedDescription)
             }
             done()
-          }).cauterize()
+          })
+            .cauterize()
         })
       }
-      
+
       it ("Can add pet using RxSwift") {
         let provider = MoyaProvider<PetService.AddPetMappableXML>.xml
         let addPet = provider.rx.requestXmlModel(PetService.AddPetMappableXML(body: self.newXmlMappablePet))
         expect(addPet.asObservable()).first.notTo(beNil())
       }
-      
+
       it ("Can add pet using PromiseKit") {
         waitUntil(timeout: 10, action: { (done) in
           firstly {
@@ -56,7 +57,7 @@ class ObjectMapperXMLSpec: QuickSpec {
           }
         })
       }
-      
+
     }
   }
 }
