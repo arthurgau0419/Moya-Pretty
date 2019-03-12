@@ -53,7 +53,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   /// - Returns: Single mappable object.
   public func requestModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return request(token, callbackQueue: callbackQueue)
-      .map {try $0.toModel(target: token, option: option)}    
+      .map {try $0.toModel(target: token, option: option)}
   }
 }
 #endif
@@ -68,7 +68,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   /// - Returns: Single mappable object.
   public func requestXmlModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return request(token, callbackQueue: callbackQueue)
-      .map {try $0.toXmlModel(target: token, option: option)}    
+      .map {try $0.toXmlModel(target: token, option: option)}
   }
 }
 #endif

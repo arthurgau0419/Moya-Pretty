@@ -11,16 +11,16 @@ import Result
 
 extension MoyaProvider where Target: DecodableType {
   open func requestModel(_ target: Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.DecodableModel, MoyaError>) -> Void)) -> Cancellable {
-    
+
     return request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in
-      
+
       let modelResult = result
         .flatMap { response -> Result<Target.DecodableModel, MoyaError> in
           Result<Target.DecodableModel, MoyaError>(attempt: {
             try response.toModel(target: target, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData)
           })
       }
-      
+
       completion(modelResult)
     })
   }

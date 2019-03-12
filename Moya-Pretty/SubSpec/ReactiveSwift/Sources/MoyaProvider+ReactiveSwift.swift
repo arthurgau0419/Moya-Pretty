@@ -17,7 +17,7 @@ extension Reactive where Base: MoyaProviderType, Base.Target: DecodableType  {
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: SignalProducer<Base.Target.DecodableModel, MoyaError>.
   public func requestModel(_ token: Base.Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> SignalProducer<Base.Target.DecodableModel, MoyaError> {
-    
+
     return request(token, callbackQueue: callbackQueue)
       .attemptMap { response -> Result<Base.Target.DecodableModel, MoyaError> in
         return Result<Base.Target.DecodableModel, MoyaError>(attempt: { () -> Base.Target.DecodableModel in

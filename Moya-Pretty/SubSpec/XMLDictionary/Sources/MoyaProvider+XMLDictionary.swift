@@ -20,7 +20,7 @@ public protocol XMLTargetType: TargetType {}
 extension TargetType where Self: MappableBodyType, Self: XMLTargetType {
   public var task: Task {
     return Task.requestParameters(parameters: body.toJSON(), encoding: XMLEncoding.default)
-  }  
+  }
 }
 
 extension MoyaProvider where MoyaProvider.Target: MappableResponseType {

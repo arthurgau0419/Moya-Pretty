@@ -22,11 +22,11 @@ public struct AcceptHeaderPlugin: PluginType {
     req.addValue(accepts.joined(separator: ","), forHTTPHeaderField: "Accept")
     return req
   }
-  
+
   public init(accepts: [AcceptType]) {
     self.accepts = accepts.map {$0.rawValue}
   }
-  
+
   public init(accepts: [String]) {
     self.accepts = accepts
   }

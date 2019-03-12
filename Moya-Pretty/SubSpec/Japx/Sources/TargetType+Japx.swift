@@ -40,7 +40,7 @@ open class JapxCodableTarget<InputModel: Encodable, OutputModel: Decodable>: Jap
   }
 }
 
-public protocol JapxDecodableType: DecodableType  {
+public protocol JapxDecodableType: DecodableType {
   var japxDecoder: JapxDecoder? {get}
 }
 

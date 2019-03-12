@@ -19,7 +19,7 @@ class ObjectMapperSpec: QuickSpec {
   let newMappablePet = MappablePet(JSON: ["id": 1, "name":"Obi"])!
   override func spec() {
     describe("ObjectMapper") {
-      
+
       it ("Can add pet") {
         waitUntil(timeout: 10, action: { (done) in
           MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet), completion: { (result) in
@@ -31,16 +31,17 @@ class ObjectMapperSpec: QuickSpec {
               fail(error.localizedDescription)
             }
             done()
-          }).cauterize()
+          })
+            .cauterize()
         })
       }
-      
+
       it ("Can add pet using RxSwift") {
         let provider = MoyaProvider<PetService.AddPetMappable>.default
         let addPet = provider.rx.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
         expect(addPet.asObservable()).first.notTo(beNil())
       }
-      
+
       it ("Can add pet using PromiseKit") {
         waitUntil(timeout: 10, action: { (done) in
           firstly {
@@ -55,7 +56,7 @@ class ObjectMapperSpec: QuickSpec {
           }
         })
       }
-      
+
     }
   }
 }

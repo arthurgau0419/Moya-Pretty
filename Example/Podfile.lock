@@ -74,6 +74,7 @@ PODS:
   - RxTest (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - SwiftLint (0.31.0)
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxNimble
   - RxTest
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -110,6 +112,7 @@ SPEC REPOS:
     - RxNimble
     - RxSwift
     - RxTest
+    - SwiftLint
     - XMLDictionary
 
 EXTERNAL SOURCES:
@@ -133,8 +136,9 @@ SPEC CHECKSUMS:
   RxNimble: ba6caf0195c37fd50dd4b967624b66ff580d781a
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 985a285eb92d0d62e1d3e3546cf51bb99cf45e39
+PODFILE CHECKSUM: 439be523bdde4d1bf541883d2ac53252c207f8e7
 
 COCOAPODS: 1.5.3

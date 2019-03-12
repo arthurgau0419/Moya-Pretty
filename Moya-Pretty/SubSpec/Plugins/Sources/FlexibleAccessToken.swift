@@ -9,13 +9,13 @@ import Foundation
 import Moya
 
 public struct FlexibleAccessTokenPlugin: PluginType {
-  
+
   public let httpHeaderField: String
   public let httpHeaderValueFormat: String
-  
+
   /// A closure returning the access token to be applied in the header.
   public let tokenClosure: () -> String
-  
+
   /**
    Initialize a new `FlexibleAccessTokenPlugin`.
    
@@ -29,7 +29,7 @@ public struct FlexibleAccessTokenPlugin: PluginType {
     self.httpHeaderField = httpHeaderField
     self.httpHeaderValueFormat = httpHeaderValueFormat
   }
-  
+
   /**
    Prepare a request by adding an authorization header if necessary.
    
