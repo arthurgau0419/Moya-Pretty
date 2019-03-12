@@ -27,7 +27,7 @@ extension MoyaProvider where MoyaProvider.Target: MappableResponseType {
   open func requestXmlModel(_ target: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.MappableResponseModel, MoyaError>) -> Void)) -> Cancellable {
     return self.request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in
       let modelResult = result.flatMap { (response) in
-        Result<Target.MappableResponseModel, MoyaError>.init(attempt: {
+        Result<Target.MappableResponseModel, MoyaError>.init(catching: {
           try response.toXmlModel(target: target, option: option)
         })
       }

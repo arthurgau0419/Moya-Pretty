@@ -88,7 +88,7 @@ pod 'Moya-Pretty/RxSwift'
 ```
 Execute:
 ```swift
-let provider = MoyaProvider<PetService.AddPet>() 
+let provider = MoyaProvider<PetService.AddPet>()
 let pet = Pet(id: 1, name: "Obi")
 let target = PetService.AddPet(body: pet)
 provider.rx.requestModel(target).subscribe { event in
@@ -98,6 +98,29 @@ provider.rx.requestModel(target).subscribe { event in
       print(pet.name)
     case let .error(error):
       print(error)
+  }
+}
+```
+
+### ReactiveSwift
+Installation:
+```ruby
+pod 'Moya-Pretty/ReactiveSwift'
+```
+Execute:
+```swift
+let provider = MoyaProvider<PetService.AddPet>()
+let pet = Pet(id: 1, name: "Obi")
+let target = PetService.AddPet(body: pet)
+provider.reactive.requestModel(target).start { event in
+  switch event {
+    case .value(let pet):
+      // Pet model here 🎉 🎉 🎉
+      print(pet.name)
+    case .failed(let error):
+      print(error)
+    default:
+      break
   }
 }
 ```
@@ -137,6 +160,8 @@ pod 'Moya-Pretty'
 pod 'Moya-Pretty/ObjectMapper'
 
 pod 'Moya-Pretty/RxSwift'
+
+pod 'Moya-Pretty/ReactiveSwift'
 
 pod 'Moya-Pretty/PromiseKit'
 
