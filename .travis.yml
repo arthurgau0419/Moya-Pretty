@@ -12,7 +12,7 @@ before_install:
 - pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint --allow-warnings
+- pod lib lint --allow-warnings --fail-fast --verbose | ruby -e 'ARGF.each{ print "." }'
 deploy:
   provider: script
   script: pod trunk push --allow-warnings
