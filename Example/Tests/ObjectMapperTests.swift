@@ -12,8 +12,6 @@ import Moya
 import Moya_Pretty
 import ObjectMapper
 import PromiseKit
-import RxSwift
-import RxNimble
 
 class ObjectMapperSpec: QuickSpec {
   let newMappablePet = MappablePet(JSON: ["id": 1, "name":"Obi"])!
@@ -33,27 +31,6 @@ class ObjectMapperSpec: QuickSpec {
             done()
           })
             .cauterize()
-        })
-      }
-
-      it ("Can add pet using RxSwift") {
-        let provider = MoyaProvider<PetService.AddPetMappable>.default
-        let addPet = provider.rx.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
-        expect(addPet.asObservable()).first.notTo(beNil())
-      }
-
-      it ("Can add pet using PromiseKit") {
-        waitUntil(timeout: 10, action: { (done) in
-          firstly {
-            MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet))
-            }.done({ (pet) in
-              expect(pet.id).to(equal(self.newMappablePet.id))
-              expect(pet.name).to(equal(self.newMappablePet.name))
-            }).catch({ (error) in
-              fail(error.localizedDescription)
-            }).finally {
-              done()
-          }
         })
       }
 

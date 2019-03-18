@@ -12,26 +12,29 @@
 		8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */; };
 		8E5C63C020F2107400012717 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C63BF20F2107400012717 /* Models.swift */; };
 		8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EECF71520EC702E000FDAB3 /* Demo.swift */; };
-		C97CC4A9A47302DAF65126E4 /* Pods_Moya_Pretty_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */; };
+		8EEE3451223A595300D21455 /* ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */; };
+		8EEE3453223A5DFA00D21455 /* RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */; };
+		8EEE3455223A793000D21455 /* PromiseKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3454223A793000D21455 /* PromiseKitTests.swift */; };
+		E27807AA3CFFC7C5870D9CE0 /* Pods_Moya_Pretty_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74EB84D65968258AA5088421 /* Pods_Moya_Pretty_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19010BC65B3BFDEF027C90FF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		36C75626E3D45611AF185723 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		4E1C6FF0ADC81105CE2E4A9E /* Pods_ObiMoyaExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObiMoyaExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Moya-Pretty_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Pretty_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		74EB84D65968258AA5088421 /* Pods_Moya_Pretty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Pretty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4DFD6920F1459800F88F01 /* Moya-Pretty.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Moya-Pretty.podspec"; path = "../Moya-Pretty.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
 		8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperXMLTests.swift; sourceTree = "<group>"; };
 		8E5C63BF20F2107400012717 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		8EECF71520EC702E000FDAB3 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
-		95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObiMoyaExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObiMoyaExtension_Tests/Pods-ObiMoyaExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Pretty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftTests.swift; sourceTree = "<group>"; };
+		8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTests.swift; sourceTree = "<group>"; };
+		8EEE3454223A793000D21455 /* PromiseKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97CC4A9A47302DAF65126E4 /* Pods_Moya_Pretty_Tests.framework in Frameworks */,
+				E27807AA3CFFC7C5870D9CE0 /* Pods_Moya_Pretty_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +74,9 @@
 				8E5C63BF20F2107400012717 /* Models.swift */,
 				8EECF71520EC702E000FDAB3 /* Demo.swift */,
 				607FACEB1AFB9204008FA782 /* CodableTests.swift */,
+				8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */,
+				8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */,
+				8EEE3454223A793000D21455 /* PromiseKitTests.swift */,
 				8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */,
 				8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -99,8 +105,6 @@
 		8860E2795001B7E60D14F75E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9AD6190ED1D7467B87665A89 /* Pods-ObiMoyaExtension_Tests.debug.xcconfig */,
-				95C05F03CF1CC37A36F159DC /* Pods-ObiMoyaExtension_Tests.release.xcconfig */,
 				65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */,
 				5BD5276B1176ADF8065FE408 /* Pods-Moya-Pretty_Tests.release.xcconfig */,
 			);
@@ -110,8 +114,7 @@
 		E90CE2AB93D6EA1FC830A87E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E1C6FF0ADC81105CE2E4A9E /* Pods_ObiMoyaExtension_Tests.framework */,
-				9DC228927D3BAB045CD05209 /* Pods_Moya_Pretty_Tests.framework */,
+				74EB84D65968258AA5088421 /* Pods_Moya_Pretty_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,7 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EEE3451223A595300D21455 /* ReactiveSwiftTests.swift in Sources */,
 				8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */,
+				8EEE3455223A793000D21455 /* PromiseKitTests.swift in Sources */,
+				8EEE3453223A5DFA00D21455 /* RxSwiftTests.swift in Sources */,
 				8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */,
 				8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* CodableTests.swift in Sources */,
