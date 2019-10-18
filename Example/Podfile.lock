@@ -96,7 +96,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Japx
     - Moya
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Japx: 153a8a39a71121827bcf89c6f89ef28091f2b3e7
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Moya-Pretty: 152db2b019b7bae352e115e932599fb8ec7aadd4
+  Moya-Pretty: db15d18b6370168365d3ed95c1a13ea526f4f128
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
@@ -141,4 +141,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 439be523bdde4d1bf541883d2ac53252c207f8e7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
