@@ -1,11 +1,7 @@
-// https://github.com/Quick/Quick
-
 import Quick
 import Nimble
 import Moya_Pretty
 import Moya
-import RxSwift
-import RxNimble
 import PromiseKit
 
 class CodableSpec: QuickSpec {
@@ -43,14 +39,6 @@ class CodableSpec: QuickSpec {
           })
             .cauterize()
         })
-      }
-
-      it ("Can add pet using RxSwift") {
-        let provider = MoyaProvider<PetService.AddPet>.default
-        let addPet = provider.rx
-          .requestModel(PetService.AddPet(body: self.newPet)).timeout(RxTimeInterval(10), scheduler: MainScheduler.instance)
-        _ = addPet.subscribe()
-        expect(addPet.asObservable()).first.notTo(beNil())
       }
 
       it ("Can add pet using PromiseKit") {

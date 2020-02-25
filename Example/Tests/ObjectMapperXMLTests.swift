@@ -13,8 +13,6 @@ import Moya_Pretty
 import ObjectMapper
 import XMLDictionary
 import PromiseKit
-import RxSwift
-import RxNimble
 
 class ObjectMapperXMLSpec: QuickSpec {
   let newXmlMappablePet = XMLMappablePet(JSON: ["id": "1", "name":"Obi"])!
@@ -35,12 +33,6 @@ class ObjectMapperXMLSpec: QuickSpec {
           })
             .cauterize()
         })
-      }
-
-      it ("Can add pet using RxSwift") {
-        let provider = MoyaProvider<PetService.AddPetMappableXML>.xml
-        let addPet = provider.rx.requestXmlModel(PetService.AddPetMappableXML(body: self.newXmlMappablePet))
-        expect(addPet.asObservable()).first.notTo(beNil())
       }
 
       it ("Can add pet using PromiseKit") {
