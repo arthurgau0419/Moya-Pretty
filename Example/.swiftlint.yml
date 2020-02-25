@@ -3,6 +3,7 @@ disabled_rules: # rule identifiers to exclude from running
   - line_length
   - identifier_name
   - redundant_string_enum_value
+  - force_cast
 opt_in_rules:
   - empty_count
 included: # paths to include during linting. `--path` is ignored if present.
