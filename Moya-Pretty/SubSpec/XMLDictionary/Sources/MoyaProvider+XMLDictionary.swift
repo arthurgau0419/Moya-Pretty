@@ -9,7 +9,6 @@ import Foundation
 import Moya
 import ObjectMapper
 import XMLDictionary
-import Result
 
 enum XMLDictionaryError: Error {
   case xmlMapping(Response)
@@ -27,9 +26,9 @@ extension MoyaProvider where MoyaProvider.Target: MappableResponseType {
   open func requestXmlModel(_ target: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping ((_ result: Result<Target.MappableResponseModel, MoyaError>) -> Void)) -> Cancellable {
     return self.request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in
       let modelResult = result.flatMap { (response) in
-        Result<Target.MappableResponseModel, MoyaError>.init(catching: {
+        Result<Target.MappableResponseModel, Error>.init(catching: {
           try response.toXmlModel(target: target, option: option)
-        })
+        }).mapError { $0 as! MoyaError }
       }
       completion(modelResult)
     })
