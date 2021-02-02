@@ -10,7 +10,7 @@ import ObjectMapper
 
 extension MoyaProvider where Target: DecodableType {
   /*
-   Request deodable object using PromiseKit.
+   Request deodable object using Combine.
    **/
   public func requestModelPublisher(_ token: Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder = JSONDecoder(), failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> AnyPublisher<Target.DecodableModel, MoyaError> {
     return requestPublisher(token, callbackQueue: callbackQueue)
@@ -21,7 +21,7 @@ extension MoyaProvider where Target: DecodableType {
 #if canImport(Japx)
 extension MoyaProvider where Target: JapxDecodableType {
   /*
-   Request jsonapi deodable object using PromiseKit.
+   Request jsonapi deodable object using Combine.
    **/
   public func requestModelPublisher(_ token: Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> AnyPublisher<Target.DecodableModel, MoyaError> {
     Future { promise in
@@ -37,7 +37,7 @@ extension MoyaProvider where Target: JapxDecodableType {
 #if canImport(ObjectMapper)
 extension MoyaProvider where Target: MappableResponseType {
   /*
-   Request mappable object using PromiseKit.
+   Request mappable object using Combine.
    **/
   public func requestModelPublisher(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> AnyPublisher<Target.MappableResponseModel, MoyaError> {
     Future { promise in
@@ -53,7 +53,7 @@ extension MoyaProvider where Target: MappableResponseType {
 #if canImport(ObjectMapper) && canImport(XMLDictionary)
 extension MoyaProvider where Target: MappableResponseType {
   /*
-   Request mappable object using PromiseKit.
+   Request mappable object using Combine.
    **/
   public func requestXmlModelPublisher(_ token: Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> AnyPublisher<Target.MappableResponseModel, MoyaError> {
     Future { promise in
