@@ -22,7 +22,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: DecodableTy
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single decodable object.
-  public func requestModel(_ token: Base.Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
+  func requestModel(_ token: Base.Target, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder? = nil, failsOnEmptyData: Bool = true, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
     return request(token, callbackQueue: callbackQueue)
       .map {try $0.toModel(target: token, atKeyPath: keyPath, using: decoder, failsOnEmptyData: failsOnEmptyData)}
   }
@@ -36,7 +36,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: JapxDecodab
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single decodable object.
-  public func requestModel(_ token: Base.Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
+  func requestModel(_ token: Base.Target, using decoder: JapxDecoder? = nil, includeList: String? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.DecodableModel> {
     return request(token, callbackQueue: callbackQueue)
       .map {try $0.toModel(target: token, using: decoder, includeList: includeList)}
   }
@@ -51,7 +51,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single mappable object.
-  public func requestModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
+  func requestModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return request(token, callbackQueue: callbackQueue)
       .map {try $0.toModel(target: token, option: option)}
   }
@@ -66,7 +66,7 @@ public extension Reactive where Base: MoyaProviderType, Base.Target: MappableRes
   ///   - token: Entity, which provides specifications necessary for a `MoyaProvider`.
   ///   - callbackQueue: Callback queue. If nil - queue from provider initializer will be used.
   /// - Returns: Single mappable object.
-  public func requestXmlModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
+  func requestXmlModel(_ token: Base.Target, option: MapperOption? = nil, callbackQueue: DispatchQueue? = nil) -> Single<Base.Target.MappableResponseModel> {
     return request(token, callbackQueue: callbackQueue)
       .map {try $0.toXmlModel(target: token, option: option)}
   }
