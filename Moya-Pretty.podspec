@@ -12,10 +12,10 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/arthurgau0419/Moya-Pretty.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/Arthurgau'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'Moya', '~> 14'
+    ss.dependency 'Moya', '~> 15.0.0-alpha.1'
     ss.source_files = 'Moya-Pretty/Classes/**/*'
   end
   
@@ -43,16 +43,22 @@ Pod::Spec.new do |s|
     ss.dependency 'PromiseKit'
   end
 
+  s.subspec 'Combine' do |ss|
+    ss.source_files = 'Moya-Pretty/SubSpec/Combine/Sources/*'
+    ss.dependency 'Moya-Pretty/Core'
+    ss.dependency 'Moya/Combine', '~> 15.0.0-alpha.1'
+  end
+
   s.subspec 'RxSwift' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/RxSwift/Sources/*'
     ss.dependency 'Moya-Pretty/Core'
-    ss.dependency 'Moya/RxSwift'
+    ss.dependency 'Moya/RxSwift', '~> 15.0.0-alpha.1'
   end
   
   s.subspec 'ReactiveSwift' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/ReactiveSwift/Sources/*'
     ss.dependency 'Moya-Pretty/Core'
-    ss.dependency 'Moya/ReactiveSwift'
+    ss.dependency 'Moya/ReactiveSwift', '~> 15.0.0-alpha.1'
   end
 
   s.subspec 'RESTful' do |ss|

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* CodableTests.swift */; };
+		8E1FCF2E25C9AED3004ABBF2 /* CombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FCF2D25C9AED3004ABBF2 /* CombineTests.swift */; };
 		8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */; };
 		8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */; };
 		8E5C63C020F2107400012717 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C63BF20F2107400012717 /* Models.swift */; };
@@ -27,6 +28,7 @@
 		607FACEB1AFB9204008FA782 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		65BBC7BB07BDE62FEE012F41 /* Pods-Moya-Pretty_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Pretty_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Pretty_Tests/Pods-Moya-Pretty_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		74EB84D65968258AA5088421 /* Pods_Moya_Pretty_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Pretty_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1FCF2D25C9AED3004ABBF2 /* CombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTests.swift; sourceTree = "<group>"; };
 		8E4DFD6920F1459800F88F01 /* Moya-Pretty.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Moya-Pretty.podspec"; path = "../Moya-Pretty.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
 		8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperXMLTests.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				8E5C63BF20F2107400012717 /* Models.swift */,
 				8EECF71520EC702E000FDAB3 /* Demo.swift */,
 				607FACEB1AFB9204008FA782 /* CodableTests.swift */,
+				8E1FCF2D25C9AED3004ABBF2 /* CombineTests.swift */,
 				8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */,
 				8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */,
 				8EEE3454223A793000D21455 /* PromiseKitTests.swift */,
@@ -282,6 +285,7 @@
 				8EEE3451223A595300D21455 /* ReactiveSwiftTests.swift in Sources */,
 				8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */,
 				8EEE3455223A793000D21455 /* PromiseKitTests.swift in Sources */,
+				8E1FCF2E25C9AED3004ABBF2 /* CombineTests.swift in Sources */,
 				8EEE3453223A5DFA00D21455 /* RxSwiftTests.swift in Sources */,
 				8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */,
 				8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */,
@@ -338,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -1,3 +1,4 @@
+platform :ios, '13.0'
 use_frameworks!
 target 'Moya-Pretty_Tests' do
   pod 'Moya-Pretty', :path => '../'
@@ -5,6 +6,7 @@ target 'Moya-Pretty_Tests' do
   pod 'Moya-Pretty/XMLDictionary', :path => '../'  
   pod 'Moya-Pretty/RESTful', :path => '../'
   pod 'Moya-Pretty/Plugins', :path => '../'
+  pod 'Moya-Pretty/Combine', :path => '../'
   pod 'Moya-Pretty/RxSwift', :path => '../'
   pod 'Moya-Pretty/ReactiveSwift', :path => '../'
   pod 'Moya-Pretty/PromiseKit', :path => '../'
