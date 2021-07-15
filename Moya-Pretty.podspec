@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Moya-Pretty'
-  s.version          = '3.0.0'
+  s.version          = '4.0.0-alpha.1'
   s.summary          = 'Codable, ObjectMapper, RxSwift, PromiseKit, RESTful extensions for Moya.'
   s.description      = <<-DESC
     *Moya-Pretty* provides many convenient extensions like *generic class-based target*, *plugins*, even *RESTful traits*. This allows you to declare [Moya](https://github.com/Moya/Moya) Target more pretty and without writing those extensions again by yourself.
