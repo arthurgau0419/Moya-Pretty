@@ -11,6 +11,7 @@
 		8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */; };
 		8E4DFD7720F1FAC700F88F01 /* ObjectMapperXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */; };
 		8E5C63C020F2107400012717 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C63BF20F2107400012717 /* Models.swift */; };
+		8ECF76B026A0215100844377 /* CombineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF76AF26A0215100844377 /* CombineTest.swift */; };
 		8EECF71620EC702E000FDAB3 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EECF71520EC702E000FDAB3 /* Demo.swift */; };
 		8EEE3451223A595300D21455 /* ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */; };
 		8EEE3453223A5DFA00D21455 /* RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */; };
@@ -31,6 +32,7 @@
 		8E4DFD7420F1F97500F88F01 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
 		8E4DFD7620F1FAC700F88F01 /* ObjectMapperXMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapperXMLTests.swift; sourceTree = "<group>"; };
 		8E5C63BF20F2107400012717 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8ECF76AF26A0215100844377 /* CombineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTest.swift; sourceTree = "<group>"; };
 		8EECF71520EC702E000FDAB3 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftTests.swift; sourceTree = "<group>"; };
 		8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTests.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				8E5C63BF20F2107400012717 /* Models.swift */,
 				8EECF71520EC702E000FDAB3 /* Demo.swift */,
 				607FACEB1AFB9204008FA782 /* CodableTests.swift */,
+				8ECF76AF26A0215100844377 /* CombineTest.swift */,
 				8EEE3450223A595300D21455 /* ReactiveSwiftTests.swift */,
 				8EEE3452223A5DFA00D21455 /* RxSwiftTests.swift */,
 				8EEE3454223A793000D21455 /* PromiseKitTests.swift */,
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECF76B026A0215100844377 /* CombineTest.swift in Sources */,
 				8EEE3451223A595300D21455 /* ReactiveSwiftTests.swift in Sources */,
 				8E4DFD7520F1F97500F88F01 /* ObjectMapperTests.swift in Sources */,
 				8EEE3455223A793000D21455 /* PromiseKitTests.swift in Sources */,
@@ -338,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

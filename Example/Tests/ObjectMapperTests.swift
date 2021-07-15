@@ -14,12 +14,12 @@ import ObjectMapper
 import PromiseKit
 
 class ObjectMapperSpec: QuickSpec {
-  let newMappablePet = MappablePet(JSON: ["id": 1, "name":"Obi"])!
+  let newMappablePet = try! MappablePet(JSON: ["id": 1, "name":"Obi"])
   override func spec() {
     describe("ObjectMapper") {
 
       it ("Can add pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           MoyaProvider.default.requestModel(PetService.AddPetMappable(body: self.newMappablePet), completion: { (result) in
             switch result {
             case .success(let pet):

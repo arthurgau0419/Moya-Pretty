@@ -10,7 +10,7 @@ class ReactiveSwiftSpec: QuickSpec {
     describe("Codable") {
       it("Can Add Pet") {
         let provider = MoyaProvider<PetService.AddPet>.default
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           provider.reactive
             .requestModel(.init(body: Pet(id: 1, name: "Obi")))
             .start {
@@ -31,9 +31,9 @@ class ReactiveSwiftSpec: QuickSpec {
     describe("Mappable") {
       it("Can Add Pet") {
         let provider = MoyaProvider<PetService.AddPetMappable>.default
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           provider.reactive
-            .requestModel(.init(body: MappablePet(JSON: ["id": 1, "name":"Obi"])!))
+            .requestModel(.init(body: try! MappablePet(JSON: ["id": 1, "name":"Obi"])))
             .start {
               switch $0 {
               case .failed(let error):
@@ -52,9 +52,9 @@ class ReactiveSwiftSpec: QuickSpec {
     describe("XMLMappable") {
       it("Can Add Pet") {
         let provider = MoyaProvider<PetService.AddPetMappableXML>.xml
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           provider.reactive
-            .requestXmlModel(.init(body: XMLMappablePet(JSON: ["id": "1", "name":"Obi"])!))
+            .requestXmlModel(.init(body: try! XMLMappablePet(JSON: ["id": "1", "name":"Obi"])))
             .start {
               switch $0 {
               case .failed(let error):

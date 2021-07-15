@@ -9,7 +9,7 @@ class PromiseKitSpec: QuickSpec {
 
     describe("Codable") {
       it ("Can Add Pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           firstly {
             MoyaProvider.default
               .requestModel(PetService.AddPet(body: Pet(id: 1, name: "Obi")))
@@ -24,7 +24,7 @@ class PromiseKitSpec: QuickSpec {
 
     describe("Mappable") {
       it ("Can Add Pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           firstly {
             try MoyaProvider.default
               .requestModel(PetService.AddPetMappable(body: MappablePet(JSON: ["id": 1, "name":"Obi"])))
@@ -39,7 +39,7 @@ class PromiseKitSpec: QuickSpec {
 
     describe("XMLMappable") {
       it ("Can Add Pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           firstly {
             try MoyaProvider.xml
               .requestXmlModel(PetService.AddPetMappableXML(body: XMLMappablePet(JSON: ["id": "1", "name":"Obi"])))

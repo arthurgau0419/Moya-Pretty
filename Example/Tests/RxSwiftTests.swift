@@ -23,7 +23,7 @@ class RxSwiftSpec: QuickSpec {
       it("Can Add Pet") {
         let provider = MoyaProvider<PetService.AddPetMappable>.default
         let addPet = provider.rx
-          .requestModel(.init(body: MappablePet(JSON: ["id": 1, "name":"Obi"])!))
+          .requestModel(.init(body: try! MappablePet(JSON: ["id": 1, "name":"Obi"])))
           .asObservable()
         _ = addPet.subscribe()
         expect(addPet).first.notTo(beNil())
@@ -34,7 +34,7 @@ class RxSwiftSpec: QuickSpec {
       it("Can Add Pet") {
         let provider = MoyaProvider<PetService.AddPetMappableXML>.xml
         let addPet = provider.rx
-          .requestXmlModel(.init(body: XMLMappablePet(JSON: ["id": "1", "name":"Obi"])!))
+          .requestXmlModel(.init(body: try! XMLMappablePet(JSON: ["id": "1", "name":"Obi"])))
           .asObservable()
         _ = addPet.subscribe()
         expect(addPet).first.notTo(beNil())
