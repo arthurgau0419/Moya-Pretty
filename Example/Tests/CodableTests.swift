@@ -12,7 +12,7 @@ class CodableSpec: QuickSpec {
     describe("Codable") {
 
       it ("Can add pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           MoyaProvider.default.requestModel(PetService.AddPet(body: self.newPet), completion: { (result) in
             switch result {
             case .success(let pet):
@@ -27,7 +27,7 @@ class CodableSpec: QuickSpec {
       }
 
       it ("Can get pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           MoyaProvider<PetService.GetPet>.default.requestModel(PetService.GetPet(id: 2), completion: { (result) in
             switch result {
             case .success(let pet):
@@ -42,7 +42,7 @@ class CodableSpec: QuickSpec {
       }
 
       it ("Can add pet using PromiseKit") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           firstly {
             MoyaProvider.default.requestModel(PetService.AddPet(body: self.newPet))
             }.done({ (pet) in
@@ -57,7 +57,7 @@ class CodableSpec: QuickSpec {
       }
 
       it("can get pet list") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
 
           MoyaProvider.default.requestModel(PetService.GetPetList(status: .pending), completion: { (result) in
             switch result {

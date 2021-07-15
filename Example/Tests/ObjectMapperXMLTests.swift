@@ -15,12 +15,12 @@ import XMLDictionary
 import PromiseKit
 
 class ObjectMapperXMLSpec: QuickSpec {
-  let newXmlMappablePet = XMLMappablePet(JSON: ["id": "1", "name":"Obi"])!
+  let newXmlMappablePet = try! XMLMappablePet(JSON: ["id": "1", "name":"Obi"])
   override func spec() {
     describe("XMLDictionary") {
 
       it ("Can add pet") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           MoyaProvider.xml.requestXmlModel(PetService.AddPetMappableXML(body: self.newXmlMappablePet), completion: { (result) in
             switch result {
             case .success(let pet):
@@ -36,7 +36,7 @@ class ObjectMapperXMLSpec: QuickSpec {
       }
 
       it ("Can add pet using PromiseKit") {
-        waitUntil(timeout: 10, action: { (done) in
+        waitUntil(timeout: .seconds(10), action: { (done) in
           firstly {
             MoyaProvider.xml.requestXmlModel(PetService.AddPetMappableXML(body: self.newXmlMappablePet))
             }.done({ (pet) in
