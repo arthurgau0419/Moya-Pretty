@@ -3,12 +3,15 @@ PODS:
   - Japx/Codable (3.0.0):
     - Japx/Core
   - Japx/Core (3.0.0)
-  - Moya (14.0.0):
-    - Moya/Core (= 14.0.0)
+  - Moya (15.0.0-alpha.1):
+    - Moya/Core (= 15.0.0-alpha.1)
   - Moya-Pretty (3.0.0):
     - Moya-Pretty/Core (= 3.0.0)
+  - Moya-Pretty/Combine (3.0.0):
+    - Moya-Pretty/Core
+    - Moya/Combine (~> 15.0.0-alpha)
   - Moya-Pretty/Core (3.0.0):
-    - Moya (~> 14)
+    - Moya (~> 15.0.0-alpha)
   - Moya-Pretty/Japx (3.0.0):
     - Japx/Codable
     - Moya-Pretty/Core
@@ -22,21 +25,23 @@ PODS:
     - PromiseKit
   - Moya-Pretty/ReactiveSwift (3.0.0):
     - Moya-Pretty/Core
-    - Moya/ReactiveSwift
+    - Moya/ReactiveSwift (~> 15.0.0-alpha)
   - Moya-Pretty/RESTful (3.0.0):
     - Moya-Pretty/Core
   - Moya-Pretty/RxSwift (3.0.0):
     - Moya-Pretty/Core
-    - Moya/RxSwift
+    - Moya/RxSwift (~> 15.0.0-alpha)
   - Moya-Pretty/XMLDictionary (3.0.0):
     - Moya-Pretty/ObjectMapper
     - XMLDictionary
-  - Moya/Core (14.0.0):
+  - Moya/Combine (15.0.0-alpha.1):
+    - Moya/Core
+  - Moya/Core (15.0.0-alpha.1):
     - Alamofire (~> 5.0)
-  - Moya/ReactiveSwift (14.0.0):
+  - Moya/ReactiveSwift (15.0.0-alpha.1):
     - Moya/Core
     - ReactiveSwift (~> 6.0)
-  - Moya/RxSwift (14.0.0):
+  - Moya/RxSwift (15.0.0-alpha.1):
     - Moya/Core
     - RxSwift (~> 5.0)
   - Nimble (9.2.0)
@@ -75,6 +80,7 @@ PODS:
 
 DEPENDENCIES:
   - Moya-Pretty (from `../`)
+  - Moya-Pretty/Combine (from `../`)
   - Moya-Pretty/Japx (from `../`)
   - Moya-Pretty/ObjectMapper (from `../`)
   - Moya-Pretty/Plugins (from `../`)
@@ -117,8 +123,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Japx: d1f7f3e4b94f2013538102e96cf96fd417005f76
-  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  Moya-Pretty: 5ae67c9af7c0a2e7fc96a3c33c10b01a985dba85
+  Moya: 101c94dfb29289736ecd20fa6e82bea665e0671b
+  Moya-Pretty: e6503c16f75f12ee08b254ff351221770a685fb1
   Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
@@ -133,6 +139,6 @@ SPEC CHECKSUMS:
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 439be523bdde4d1bf541883d2ac53252c207f8e7
+PODFILE CHECKSUM: 69a05863af82c84f925756dc9529c29749f3bed9
 
 COCOAPODS: 1.10.1

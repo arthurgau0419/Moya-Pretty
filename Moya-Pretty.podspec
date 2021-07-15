@@ -13,10 +13,19 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/Arthurgau'
 
   s.ios.deployment_target = '10.0'
+  s.osx.deployment_target = '10.12'
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'Moya', '~> 14'
+    ss.dependency 'Moya', '~> 15.0.0-alpha'
     ss.source_files = 'Moya-Pretty/Classes/**/*'
+  end
+
+  s.subspec 'Combine' do |ss|
+    ss.source_files = 'Moya-Pretty/SubSpec/Combine/Sources/*'
+    ss.dependency 'Moya-Pretty/Core'
+    ss.dependency 'Moya/Combine', '~> 15.0.0-alpha'
+    ss.ios.deployment_target = '13.0'
+    ss.osx.deployment_target = '10.15'
   end
   
   s.subspec 'Japx' do |ss|
@@ -46,13 +55,13 @@ Pod::Spec.new do |s|
   s.subspec 'RxSwift' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/RxSwift/Sources/*'
     ss.dependency 'Moya-Pretty/Core'
-    ss.dependency 'Moya/RxSwift'
+    ss.dependency 'Moya/RxSwift', '~> 15.0.0-alpha'
   end
   
   s.subspec 'ReactiveSwift' do |ss|
     ss.source_files = 'Moya-Pretty/SubSpec/ReactiveSwift/Sources/*'
     ss.dependency 'Moya-Pretty/Core'
-    ss.dependency 'Moya/ReactiveSwift'
+    ss.dependency 'Moya/ReactiveSwift', '~> 15.0.0-alpha'
   end
 
   s.subspec 'RESTful' do |ss|
