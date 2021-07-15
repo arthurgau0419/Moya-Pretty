@@ -2,20 +2,24 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
+os: osx
 osx_image: xcode11.5
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
-- pod repo update --silent
-- pod install --project-directory=Example
+    - gem install bundler:2.2.8
+install:
+    - bundle install
+    - bundle exec pod repo update --silent
+    - bundle exec pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES -workspace Example/Moya-Pretty.xcworkspace -scheme Moya-Pretty-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-- travis_wait 60 pod lib lint --allow-warnings --fail-fast
+    - bundle exec fastlane scan --workspace Example/Moya-Pretty.xcworkspace
+    - travis_wait 60 bundle exec pod lib lint --allow-warnings --fail-fast
 deploy:
   provider: script
-  script: travis_wait 30 pod trunk push --allow-warnings
+  script:
+    - travis_wait 30 bundle exec pod trunk push --allow-warnings
   skip_cleanup: true
   on:
     tags: true
